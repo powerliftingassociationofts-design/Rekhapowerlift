@@ -1,5 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import inspireimg1 from '../../assets/images/Inspire/img1.jpg';
+import inspireimg2 from '../../assets/images/Inspire/img2.jpg';
+import inspireimg3 from '../../assets/images/Inspire/img3.jpeg';
+import inspireimg4 from '../../assets/images/Inspire/img4.jpeg';
+import inspireimg5 from '../../assets/images/Inspire/img5.jpeg';
+
+
+
+
+
 
 const InspireMain = () => {
   const stories = [
@@ -7,8 +17,7 @@ const InspireMain = () => {
       id: 1,
       name: "Rajesh Kumar",
       role: "National Powerlifter",
-      image:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=500&q=60",
+      image: inspireimg1,
       quote:
         "Powerlifting taught me discipline and resilience. WPC Telangana gave me the platform to prove my strength at the national level.",
     },
@@ -16,8 +25,7 @@ const InspireMain = () => {
       id: 2,
       name: "Deepika Rao",
       role: "Women's Powerlifting Champion",
-      image:
-        "https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=900&q=80",
+      image: inspireimg2,
       quote:
         "I started as a beginner at a local gym. Today, I proudly represent Telangana in national events thanks to WPC’s support and guidance.",
     },
@@ -25,8 +33,7 @@ const InspireMain = () => {
       id: 3,
       name: "Imran Shaik",
       role: "Youth Category Gold Medalist",
-      image:
-        "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: inspireimg3,
       quote:
         "WPC Telangana inspires every young athlete to stay consistent and confident. Hard work truly pays off here.",
     },
@@ -34,8 +41,7 @@ const InspireMain = () => {
       id: 4,
       name: "Sneha Reddy",
       role: "Coach & Mentor",
-      image:
-        "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
+      image: inspireimg4,
       quote:
         "The goal is not just lifting weights,but lifting others with your story. WPC Telangana builds a strong,supportive community.",
     },
@@ -43,8 +49,7 @@ const InspireMain = () => {
       id: 5,
       name: "Deepa Kumar",
       role: "Senior Powerlifting Trainer",
-      image:
-        "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80",
+      image: inspireimg5,
       quote:
         "Guiding young athletes under WPC Telangana has been an inspiring journey. Strength comes from unity and purpose.",
     },
@@ -114,7 +119,7 @@ const InspireMain = () => {
   ];
 
   return (
-    <section className="blog-page collaboration-page" style={{ background: "#121212" }}>
+    <section className="blog-page collaboration-page" style={{   background: "linear-gradient(to right, #4A0AB4 0%, #46e8d0 100%)" }}>
       <div className="container">
         <div className="section-title text-center mb-5">
           <h2 className="section-title__title" style={{ color: "#ff1493" }}>

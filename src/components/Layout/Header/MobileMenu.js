@@ -228,7 +228,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
             </li>
             <li>
               <i className="fa fa-phone-alt" />
-              <a href="tel:+91XXXXXXXXXXX">+91 XXXXX XXXXX</a>
+              <a href="tel:+91XXXXXXXXXXX">+91 7330778111</a>
             </li>
           </ul>
           {/* /.mobile-nav__contact */}

@@ -1,8 +1,7 @@
-// "use client";
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
-// ✅ Import all event-related images
+
 import EventDetailsImg1 from "../../assets/images/resources/event-details-img-box-img-1.jpg";
 import EventDetailsImg2 from "../../assets/images/resources/event-details-img-box-img-2.jpg";
 import EventDetailsImg3 from "../../assets/images/resources/event-details-img-1.jpg";
@@ -40,7 +39,7 @@ export default function EventDetails() {
     setActiveTab(eventId || "year-1");
   }, [eventId]);
 
-  // ✅ Events data
+  
   const tabs = [
     {
       id: "year-1",

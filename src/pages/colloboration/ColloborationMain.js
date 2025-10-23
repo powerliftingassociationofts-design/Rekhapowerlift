@@ -167,6 +167,11 @@ import TestimonialsImg3 from '../../assets/images/testimonial/testimonial-one-cl
 import TestimonialsImg4 from '../../assets/images/testimonial/testimonial-one-client-1-4.jpg';
 import TestimonialsImg5 from '../../assets/images/testimonial/testimonial-one-client-1-5.jpg';
 import TestimonialsImg6 from '../../assets/images/testimonial/testimonial-one-client-1-6.jpg';
+import collabimg1 from '../../assets/images/collaboration/img1.png';
+import collabimg2 from '../../assets/images/collaboration/img2.jpg';
+
+
+
 
 
 // Collaboration images
@@ -180,8 +185,7 @@ const cards = [
       "Social media and poster marketing",
       "Priority hosting for local events",
     ],
-    image:
-      "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=900&q=80",
+    image: collabimg1,
   },
   {
     id: 2,
@@ -192,8 +196,7 @@ const cards = [
       "3 International Medalists from Telangana",
       "Multiple National Record Holders",
     ],
-    image:
-      "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80",
+    image: collabimg2,
   },
 ];
 

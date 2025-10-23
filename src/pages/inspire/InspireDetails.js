@@ -7,6 +7,8 @@ import Footer from "../../components/Layout/Footer";
 import SiteBreadcrumb from "../../components/Common/Breadcumb";
 import bannerbg from "../../assets/images/backgrounds/page6-header-bg.jpg";
 import CtaTwo from "../../components/Common/CtaSection/CtaTwo";
+import inspireimg1 from '../../assets/images/Inspire/img1.jpg';
+
 
 const InspireDetails = () => {
   const { id } = useParams();
@@ -24,7 +26,7 @@ const InspireDetails = () => {
       id: 1,
       name: "Rajesh Kumar",
       role: "National Powerlifter",
-      image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=500&q=60",
+      image: inspireimg1,
       quote: "Powerlifting taught me discipline and resilience. WPC Telangana gave me the platform to prove my strength at the national level.",
       achievements: [
         "Gold Medal - WPC India Nationals 2024",

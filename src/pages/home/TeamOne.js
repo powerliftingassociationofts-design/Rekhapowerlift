@@ -21,7 +21,7 @@ export default function TeamOne() {
   // State for dynamic content
   const [teamContent] = useState({
     tagline: "Our Team Member",
-    title: "Our Amazing & Learned Event Speakers",
+    title: "Our Amazing & Team Members",
     members: [
       {
         id: 1,
