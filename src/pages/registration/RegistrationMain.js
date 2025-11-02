@@ -1,38 +1,27 @@
 import React, { useState } from 'react';
 
 // Import PDFs from src/assets/pdfs for proper bundling
-import registrationPDF from '../../assets/pdfs/Application.pdf';
-import rulesPDF from '../../assets/pdfs/I’d card .pdf';
+
 
 
 const RegistrationMain = () => {
     const [selectedDocument, setSelectedDocument] = useState('');
 
+    // NOTE: Add actual PDF URLs to the 'file' property when available in public/assets/pdfs/
     const documents = [
         {
             value: 'wpc-registration-form.pdf',
             label: 'WPC Registration Form',
             description: 'Official registration form for WPC Telangana competitions',
-            file: registrationPDF
+            file: '' // Add '/assets/pdfs/wpc-registration-form.pdf' when available
         },
         {
             value: 'wpc-powerlifting-rules.pdf',
             label: 'WPC ID Card Form',
             description: 'Complete rules and regulations for WPC powerlifting competitions',
-            file: rulesPDF
-        },
-        // {
-        //     value: 'wpc-competition-guidelines.pdf',
-        //     label: 'Competition Guidelines',
-        //     description: 'Guidelines and procedures for competition day',
-        //     file: guidelinesPDF
-        // },
-        // {
-        //     value: 'wpc-membership-application.pdf',
-        //     label: 'Membership Application',
-        //     description: 'Application form for WPC Telangana membership',
-        //     file: membershipPDF
-        // }
+            file: '' // Add '/assets/pdfs/wpc-powerlifting-rules.pdf' when available
+        }
+        // Add more documents as needed
     ];
 
     const handleDownload = () => {
