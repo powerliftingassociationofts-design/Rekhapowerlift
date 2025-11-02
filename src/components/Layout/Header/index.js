@@ -52,7 +52,7 @@ const Header = (props) => {
       <span className="logo-subtitle">WPC Telangana</span>
     </div>
   </Link>
-</div>s
+</div>
 
                         </div>
                         <div className="main-menu__main-menu-box">

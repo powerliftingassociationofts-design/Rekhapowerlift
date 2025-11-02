@@ -25,9 +25,11 @@ import Colloboration from "./pages/colloboration";
 import GalleryDetails from "./pages/gallery-details";
 import Event from "./pages/event";
 import EventDetails from "./pages/event-details";
-import Blog from "./pages/blog";
-import Bloglist from "./pages/blog-list";
-import BlogDetails from "./pages/blog-details";
+// New Blog System
+import BlogListPage from "./pages/blog/BlogListPage";
+import BlogDetailsPage from "./pages/blog/BlogDetailsPage";
+import AdminDashboardPageWithAuth from "./pages/admin/AdminDashboardPageWithAuth";
+import AdminQuickAccess from "./components/AdminQuickAccess";
 import Contact from "./pages/contact";
 import Results from "./pages/result";
 import Referees from "./pages/referees";
@@ -68,9 +70,13 @@ export default function App() {
         <Route path="dream-event-planners" element={<DreamEvent />} />
         <Route path="event-details" element={<EventDetails />} />
         <Route path="event" element={<Event />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="blog-list" element={<Bloglist />} />
-        <Route path="blog-details" element={<BlogDetails />} />
+        
+        {/* New Blog System */}
+        <Route path="blogs" element={<BlogListPage />} />
+        <Route path="blog/:slug" element={<BlogDetailsPage />} />
+        <Route path="admin" element={<AdminDashboardPageWithAuth />} />
+        <Route path="admin/blog-dashboard" element={<AdminDashboardPageWithAuth />} />
+        
         <Route path="contact" element={<Contact />} />
         <Route path="registration" element={<Registration />} />
         <Route path="/event-details/:eventId" element={<EventDetails />} />
@@ -80,6 +86,9 @@ export default function App() {
         <Route path="/team" element={<Home />} />
         <Route path="/team-details/:id" element={<TeamDetailsPage />} />
       </Routes>
+      
+      {/* Admin Quick Access - Available on all pages */}
+      <AdminQuickAccess />
     </BrowserRouter>
   );
 }
