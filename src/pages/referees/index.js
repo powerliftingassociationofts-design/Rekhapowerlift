@@ -29,6 +29,7 @@ const Referees = () => {
         return () => document.removeEventListener("scroll", handleScroll);
     }, []);
     return (
+        <div className="referees-page">
         <React.Fragment>
         <Header
             navImg={navImg1}
@@ -39,7 +40,7 @@ const Referees = () => {
         <SiteBreadcrumb
             pageTitle="Referees"
           pageName={
-    <span style={{ color: '#ff1493', fontSize: '25px', fontWeight: '700' }}>
+    <span style={{ color: '#000000', fontSize: '25px', fontWeight: '700' }}>
       Referees
     </span>
   }
@@ -54,6 +55,7 @@ const Referees = () => {
         <BackToTop scroll={isVisible} />
         <Footer />
     </React.Fragment>
+    </div>
     );
 }
 

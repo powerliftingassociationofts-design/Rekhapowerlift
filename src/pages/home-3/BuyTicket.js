@@ -22,7 +22,7 @@ export default function BuyTicket() {
   return (
     <>
       {/* Buy Ticket Start */}
-      <section className="buy-ticket">
+      {/* <section className="buy-ticket">
         <div className="container">
           <div className="row">
             <div className="col-xl-6">
@@ -76,7 +76,7 @@ export default function BuyTicket() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Buy Ticket End */}
     </>
   );

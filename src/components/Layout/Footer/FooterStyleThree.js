@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import footerShape1 from '../../../assets/images/shapes/site-footer-three-bg-shape.png';
-import footerLogo from '../../../assets/images/plat2.png'
+import footerLogo from '../../../assets/images/pat2.png'
 
 const footerData = {
   newsletterTitle: 'Subscribe to Our',

@@ -1,77 +1,151 @@
 import React from "react";
-import { FaUserTie, FaCertificate } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import inspireimg1 from '../../assets/images/Inspire/img1.jpg';
+import inspireimg2 from '../../assets/images/Inspire/img2.jpg';
+import inspireimg3 from '../../assets/images/Inspire/img3.jpeg';
+import inspireimg4 from '../../assets/images/Inspire/img4.jpeg';
+import inspireimg5 from '../../assets/images/Inspire/img5.jpeg';
 
-const RefereesMain = () => {
-  const referees = [
+
+
+
+
+
+const InspireMain = () => {
+  const stories = [
     {
       id: 1,
       name: "Rajesh Kumar",
-      role: "International Referee",
-      description:
-        "One of Telangana’s most respected officials, Rajesh Kumar has officiated at multiple WPC International Championships and is known for his discipline and fairness.",
-      image:
-       "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=500&q=60",
+      role: "National Powerlifter",
+      image: inspireimg1,
+      quote:
+        "Powerlifting taught me discipline and resilience. WPC Telangana gave me the platform to prove my strength at the national level.",
     },
     {
       id: 2,
-      name: "Anjali Reddy",
-      role: "National Referee",
-      description:
-        "A dedicated powerlifting judge from Hyderabad, Anjali has represented Telangana in WPC Nationals and contributes to referee training programs across the region.",
-      image:
-        "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=900&q=80",
+      name: "Deepika Rao",
+      role: "Women's Powerlifting Champion",
+      image: inspireimg2,
+      quote:
+        "I started as a beginner at a local gym. Today, I proudly represent Telangana in national events thanks to WPC’s support and guidance.",
     },
     {
       id: 3,
-      name: "Vikram Singh",
-      role: "State Referee",
-      description:
-        "Based in Warangal, Vikram has been part of the Telangana State Powerlifting Committee and frequently judges district-level competitions.",
-      image:
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80",
+      name: "Imran Shaik",
+      role: "Youth Category Gold Medalist",
+      image: inspireimg3,
+      quote:
+        "WPC Telangana inspires every young athlete to stay consistent and confident. Hard work truly pays off here.",
     },
     {
       id: 4,
-      name: "Deepika Rao",
-      role: "Technical Official",
-      description:
-        "Specializing in competition logistics, Deepika ensures fair play, equipment verification, and technical accuracy at all WPC Telangana meets.",
-      image:  "https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=900&q=80",
+      name: "Sneha Reddy",
+      role: "Coach & Mentor",
+      image: inspireimg4,
+      quote:
+        "The goal is not just lifting weights,but lifting others with your story. WPC Telangana builds a strong,supportive community.",
     },
+    // {
+    //   id: 5,
+    //   name: "Deepa Kumar",
+    //   role: "Senior Powerlifting Trainer",
+    //   image: inspireimg5,
+    //   quote:
+    //     "Guiding young athletes under WPC Telangana has been an inspiring journey. Strength comes from unity and purpose.",
+    // },
+    // {
+    //   id: 6,
+    //   name: "Vikram Singh",
+    //   role: "State Powerlifting Champion",
+    //   image:
+    //     "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=900&q=80",
+    //   quote:
+    //     "Joining WPC Telangana helped me transform my training and mindset. Now, I compete with confidence at state and national levels.",
+    // },
+    // {
+    //   id: 7,
+    //   name: "Anjali Mehra",
+    //   role: "Women’s Fitness Ambassador",
+    //   image:
+    //     "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=900&q=80",
+    //   quote:
+    //     "Being part of WPC Telangana motivates women to take strength training seriously and empowers them to achieve their fitness goals.",
+    // },
+    // {
+    //   id: 8,
+    //   name: "Raghav Varma",
+    //   role: "Junior Gold Medalist",
+    //   image:
+    //     "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    //   quote:
+    //     "I learned that patience and perseverance are key. WPC Telangana coaches pushed me to my best and prepared me for national competitions.",
+    // },
+    // {
+    //   id: 9,
+    //   name: "Priya Nair",
+    //   role: "Athlete & Motivational Speaker",
+    //   image:
+    //     "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+    //   quote:
+    //     "Sharing my journey at WPC Telangana inspires upcoming athletes to believe in themselves and chase their dreams without fear.",
+    // },
+    // {
+    //   id: 10,
+    //   name: "Suresh Reddy",
+    //   role: "Powerlifting Mentor & Trainer",
+    //   image:
+    //     "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    //   quote:
+    //     "Mentoring young lifters and watching their progress is the most rewarding part of being with WPC Telangana. Strength is cultivated here with care.",
+    // },
+    // {
+    //   id: 11,
+    //   name: "Kavya Sharma",
+    //   role: "Regional Powerlifting Champion",
+    //   image:
+    //     "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
+    //   quote:
+    //     "Training with WPC Telangana strengthened both my body and mind. Achieving medals is just part of my journey here.",
+    // },
+    // {
+    //   id: 12,
+    //   name: "Arjun Reddy",
+    //   role: "National Bench Press Record Holder",
+    //   image:
+    //     "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=800&q=80",
+    //   quote:
+    //     "I broke my limits thanks to the guidance and encouragement from WPC Telangana.persistence and dedication.",
+    // },
   ];
 
   return (
-    <section className="referee-page py-5">
+    <section className="blog-page collaboration-page" style={{ background: "#ffffff" }}>
       <div className="container">
-        {/* Page Title */}
         <div className="section-title text-center mb-5">
-          <h2 className="section-title__title">🏋️‍♂️ WPC Telangana Referee Panel</h2>
-          <p className="section-title__text">
-            Our referees uphold the highest standards of fairness and technical precision. They represent the integrity and spirit of WPC Telangana at state, national, and international platforms.
+          <h2 className="section-title__title" style={{ color: "#000000" }}>
+            Inspiring Strength Stories
+          </h2>
+          <p className="section-title__text" style={{ color: "#333333" }}>
+            Meet the powerlifters who embody strength, discipline, and determination under WPC Telangana. These athletes remind us that dedication builds champions.
           </p>
         </div>
 
-        {/* Referee Cards */}
         <div className="row">
-          {referees.map((ref) => (
-            <div
-              key={ref.id}
-              className="col-xl-3 col-lg-4 col-md-6 mb-4 wow fadeInUp"
-              data-wow-delay={`${ref.id * 150}ms`}
-            >
-              <div className="referee-card">
-                <div className="referee-card__image">
-                  <img src={ref.image} alt={ref.name} />
-                  <div className="referee-hover">
-                    <FaUserTie className="hover-icon" />
-                  </div>
+          {stories.map((athlete, index) => (
+            <div key={athlete.id} className="col-xl-3 col-lg-4 col-md-6 mb-4">
+              <div className={`inspire-card inspire-card-${index + 1}`}>
+                <div className="inspire-card__img">
+                  <img src={athlete.image} alt={athlete.name} />
+                  <div className="inspire-card__overlay"></div>
                 </div>
-                <div className="referee-card__content">
-                  <h3>{ref.name}</h3>
-                  <p className="ref-role">
-                    <FaCertificate /> {ref.role}
-                  </p>
-                  <p className="ref-desc">{ref.description}</p>
+                <div className="inspire-card__content text-center">
+                  <h3 className="inspire-card__name">{athlete.name}</h3>
+                  <p className="inspire-card__role">{athlete.role}</p>
+                  <p className="inspire-card__quote">{athlete.quote}</p>
+                  <p className="inspire-card__id">ID: {athlete.id}</p>
+                  <Link to={`/inspire-details/${athlete.id}`} className="inspire-card__btn">
+                    View Details
+                  </Link>
                 </div>
               </div>
             </div>
@@ -79,106 +153,121 @@ const RefereesMain = () => {
         </div>
       </div>
 
-      {/* Inline CSS */}
       <style>{`
-        .referee-card {
-          background: #fff;
+        .inspire-card {
+          background: rgba(255, 255, 255, 0.95);
           border-radius: 15px;
           overflow: hidden;
-          text-align: center;
-          box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-          transition: all 0.3s ease;
-          cursor: pointer;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+          transition: all 0.4s ease;
+          border: 1px solid rgba(0,0,0,0.1);
         }
-
-        .referee-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        
+        /* Default hover effect */
+        .inspire-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
-
-        .referee-card__image {
+        
+        /* Card 1 - Light Red Hover */
+        .inspire-card-1:hover {
+          background: linear-gradient(135deg, rgba(255, 182, 193, 0.9) 0%, rgba(255, 160, 160, 0.9) 100%);
+          border-color: #ffb6c1;
+          box-shadow: 0 15px 40px rgba(255, 105, 135, 0.3);
+        }
+        
+        /* Card 2 - Light Blue Hover */
+        .inspire-card-2:hover {
+          background: linear-gradient(135deg, rgba(173, 216, 230, 0.9) 0%, rgba(135, 206, 235, 0.9) 100%);
+          border-color: #add8e6;
+          box-shadow: 0 15px 40px rgba(100, 149, 237, 0.3);
+        }
+        
+        /* Card 3 - Light Red Hover */
+        .inspire-card-3:hover {
+          background: linear-gradient(135deg, rgba(255, 192, 203, 0.9) 0%, rgba(255, 182, 193, 0.9) 100%);
+          border-color: #ffc0cb;
+          box-shadow: 0 15px 40px rgba(255, 105, 135, 0.3);
+        }
+        
+        /* Card 4 - Light Blue Hover */
+        .inspire-card-4:hover {
+          background: linear-gradient(135deg, rgba(176, 224, 230, 0.9) 0%, rgba(173, 216, 230, 0.9) 100%);
+          border-color: #b0e0e6;
+          box-shadow: 0 15px 40px rgba(100, 149, 237, 0.3);
+        }
+        
+        .inspire-card__img {
           position: relative;
-          height: 250px;
-          overflow: hidden;
         }
-
-        .referee-card__image img {
+        .inspire-card__img img {
           width: 100%;
-          height: 100%;
+          height: 260px;
           object-fit: cover;
-          transition: transform 0.4s ease;
+          display: block;
         }
-
-        .referee-card:hover img {
-          transform: scale(1.08);
-        }
-
-        .referee-hover {
+        .inspire-card__overlay {
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
           background: rgba(0,0,0,0.4);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          opacity: 0;
-          transition: opacity 0.4s ease;
         }
-
-        .referee-card:hover .referee-hover {
-          opacity: 1;
-        }
-
-        .hover-icon {
-          font-size: 2rem;
-          color: #fff;
-        }
-
-        .referee-card__content {
+        .inspire-card__content {
           padding: 20px;
+          color: #000000;
         }
-
-        /* Referee name in dark pink */
-        .referee-card__content h3 {
-          font-size: 1.3rem;
-          color: #ff1493;
-          font-weight: 700;
+        .inspire-card__name {
+          font-size: 20px;
+          color: #000000;
           margin-bottom: 5px;
-        }
-
-        .ref-role {
           font-weight: 600;
-          color: #222;
+        }
+        .inspire-card__role {
+          font-weight: 600;
+          color: #666666;
           margin-bottom: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
         }
-
-        .ref-desc {
-          color: #555;
-          font-size: 0.95rem;
+        .inspire-card__quote {
+          color: #444444;
+          font-size: 14px;
+          margin-bottom: 10px;
+          line-height: 1.5;
         }
-
-        /* Section title and description */
-        .section-title__title {
-          font-weight: 700;
-          color: #ff1493;
-          font-size: 2rem;
+        .inspire-card__id {
+          font-weight: bold;
+          color: #000000;
+          margin-bottom: 15px;
         }
-
-        .section-title__text {
+        .inspire-card__btn {
+          display: inline-block;
+          padding: 8px 15px;
+          background: #007bff;
           color: #fff;
-          font-weight: 700;
-          max-width: 700px;
-          margin: 0 auto;
+          border-radius: 8px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: background 0.3s;
+        }
+        .inspire-card__btn:hover {
+          background: #0056b3;
+          color: #ffffff;
+        }
+        
+        /* Hover effects for button based on card type */
+        .inspire-card-1:hover .inspire-card__btn,
+        .inspire-card-3:hover .inspire-card__btn {
+          background: #dc3545;
+          color: #ffffff;
+        }
+        
+        .inspire-card-2:hover .inspire-card__btn,
+        .inspire-card-4:hover .inspire-card__btn {
+          background: #007bff;
+          color: #ffffff;
         }
       `}</style>
     </section>
   );
 };
 
-export default RefereesMain;
+export default InspireMain;

@@ -4,7 +4,7 @@ import MenuItems from './MenuItems';
 import MobileMenu from './MobileMenu';
 import SearchPopup from './SearchPopup';
 import Sidebar from './Sidebar';
-import navLogo from "../../../assets/images/resources/logo-1.png";
+import navLogo from "../../../assets/images/plat2.png";
 
 const Header = (props) => {
     const { parentMenu, secondParentMenu, activeMenu } = props;
@@ -21,15 +21,12 @@ const Header = (props) => {
             document.body.classList.remove("mobile-menu-visible");
         }
     }
-
     const handlePopup = () => {
         setIsPopup(!isPopup);
     }
-
     const handleSidebar = () => {
         setIsSidebar(!isSidebar);
     }
-
     const handleScroll = () => {
             setIsVisible(window.scrollY > 100);
         };
@@ -47,10 +44,16 @@ const Header = (props) => {
                     <div className="main-menu__wrapper-inner">
                         <div className="main-menu__left">
                         <div className="main-menu__logo">
-                            <Link to="/">
-                                <img src={navLogo} alt="Logo" />
-                            </Link>
-                        </div>
+  <Link to="/" className="logo-link">
+    <img src={navLogo} alt="Logo" className="logo-img" />
+    <div className="logo-text">
+      <span className="logo-title" style={{ color: 'red' }}>Rekha</span>
+      <br />
+      <span className="logo-subtitle">WPC Telangana</span>
+    </div>
+  </Link>
+</div>s
+
                         </div>
                         <div className="main-menu__main-menu-box">
                         <div className="mobile-nav__toggler" onClick={handleMobileMenu}>
@@ -65,22 +68,12 @@ const Header = (props) => {
                         </ul>
                         </div>
                         <div className="main-menu__right">
+
                         {/* <div className="main-menu__btn-box">
                             <Link to="/contact" className="main-menu__btn thm-btn">
-                                Buy Ticket <span className="icon-arrow-right"></span>
+                                Join WPC <span className="icon-arrow-right"></span>
                             </Link>
                         </div> */}
-                        <div className="main-menu__cart-search-nav-sidebar-icon-and-btn-box">
-                            {/* <Link to="#" className="main-menu__cart icon-cart"></Link>
-                            <Link to="#" className="main-menu__search search-toggler" onClick={handlePopup}>
-                            <span className="icon-loupe"></span>
-                            </Link> */}
-                            <div className="main-menu__nav-sidebar-icon" onClick={handleSidebar}>
-                            <div className="navSidebar-button">
-                                <span className="icon-menu1"></span>
-                            </div>
-                            </div>
-                        </div>
                         </div>
                     </div>
                 </div>
@@ -92,8 +85,13 @@ const Header = (props) => {
                             <div className="main-menu__wrapper-inner">
                                 <div className="main-menu__left">
                                 <div className="main-menu__logo">
-                                    <Link to="/">
-                                        <img src={navLogo} alt="Logo" />
+                                   <Link to="/" className="logo-link">
+                                        <img src={navLogo} alt="Logo" className="logo-img" />
+                                        <div className="logo-text">
+                                        <span className="logo-title">Rekha</span>
+                                        <br />
+                                        <span className="logo-subtitle">WPC Telangana</span>
+                                        </div>
                                     </Link>
                                 </div>
                                 </div>
@@ -110,22 +108,12 @@ const Header = (props) => {
                                 </ul>
                                 </div>
                                 <div className="main-menu__right">
+                               
                                 {/* <div className="main-menu__btn-box">
                                     <Link to="/contact" className="main-menu__btn thm-btn">
-                                        Buy Ticket <span className="icon-arrow-right"></span>
+                                        Join WPC <span className="icon-arrow-right"></span>
                                     </Link>
                                 </div> */}
-                                <div className="main-menu__cart-search-nav-sidebar-icon-and-btn-box">
-                                    <Link to="#" className="main-menu__cart icon-cart"></Link>
-                                    <div className="main-menu__search search-toggler" onClick={handlePopup}>
-                                    <span className="icon-loupe"></span>
-                                    </div>
-                                    <div className="main-menu__nav-sidebar-icon" onClick={handleSidebar}>
-                                    <div className="navSidebar-button">
-                                        <span className="icon-menu1"></span>
-                                    </div>
-                                    </div>
-                                </div>
                                 </div>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ export default function BuyTicket() {
   // State for dynamic content
   const [ticketContent] = useState({
     address: "WPC–Telangana Headquarters, Hyderabad, Telangana, India",
-    timing: "Email: info@wpctelangana.in | Phone: +91 XXXXX XXXXX",
+    timing: "Email: info@wpctelangana.in | Phone:+91 7330778111",
     title: "Join WPC–Telangana Membership Today",
     description:
       "Become part of the official state federation under WPC–India. Get your official ID card, access to certified coaches, and compete in district, state, and national championships.",

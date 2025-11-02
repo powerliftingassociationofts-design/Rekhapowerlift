@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import footerLogo from '../../../assets/images/plat2.png'
+import footerLogo from '../../../assets/images/pat2.png'
 
 
 // Example footer data (replace with actual dynamic data)

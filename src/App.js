@@ -33,6 +33,8 @@ import Results from "./pages/result";
 import Referees from "./pages/referees";
 import Inspire from "./pages/inspire";
 import InspireDetails from "./pages/inspire/InspireDetails";
+import SuccessStories from "./pages/inspire/success-stories";
+import Registration from "./pages/registration";
 import ScrollToTop from "./ScrollToTop";
 
 export default function App() {
@@ -70,8 +72,10 @@ export default function App() {
         <Route path="blog-list" element={<Bloglist />} />
         <Route path="blog-details" element={<BlogDetails />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="registration" element={<Registration />} />
         <Route path="/event-details/:eventId" element={<EventDetails />} />
         <Route path="/inspire" element={<Inspire />} />
+        <Route path="/inspire/success-stories" element={<SuccessStories />} />
         <Route path="/inspire-details/:id" element={<InspireDetails />} />
         <Route path="/team" element={<Home />} />
         <Route path="/team-details/:id" element={<TeamDetailsPage />} />

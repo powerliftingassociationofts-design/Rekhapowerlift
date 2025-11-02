@@ -152,7 +152,7 @@ const AboutMain = () => {
                       birthdays to conferences Events bring people together for
                       a shared
                     </p>
-                    <div className="buy-ticket__btn-box">
+                    {/* <div className="buy-ticket__btn-box">
                       <Link to="/contact" className="buy-ticket__btn-1 thm-btn">
                         Buy Your Ticket
                         <span className="icon-arrow-right"></span>
@@ -160,10 +160,10 @@ const AboutMain = () => {
                       <Link to="/contact" className="buy-ticket__btn-2 thm-btn">
                         Contact Us<span className="icon-arrow-right"></span>
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
-                <div className="col-xl-6">
+                {/* <div className="col-xl-6">
                   <div
                     className="buy-ticket__right wow fadeInRight"
                     data-wow-delay="300ms"
@@ -174,7 +174,7 @@ const AboutMain = () => {
                         alt="" />
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
         </section>

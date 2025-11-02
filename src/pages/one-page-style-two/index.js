@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import HomeTwoMain from './HomeTwoMain';
 import FooterTwo from '../../components/Layout/Footer/FooterStyleTwo';
 import BackToTop from '../../components/elements/BackToTop';
-import HeaderStyleSix from '../../components/Layout/Header/HeaderStyleSix';
+import HeaderStyleOne from '../../components/Layout/Header/HeaderStyleOne';
 
 const HomeTwo = () => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -24,7 +24,7 @@ const HomeTwo = () => {
 	return (
 		<div className="body-bg-color-2">
 		<React.Fragment>
-            <HeaderStyleSix />
+            <HeaderStyleOne />
             <HomeTwoMain/>
             <BackToTop scroll={isVisible} />
             <FooterTwo />

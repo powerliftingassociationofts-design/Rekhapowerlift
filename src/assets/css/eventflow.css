@@ -38,23 +38,66 @@
   --eventflow-font-two: "Inter", sans-serif;
   --eventflow-gray: #7C7B7B;
   --eventflow-gray-rgb: 124, 123, 123;
-  --eventflow-white: #ffffff;
+  --eventflow-white:black;
   --eventflow-white-rgb: 255, 255, 255;
-  --eventflow-base: #B20D5D;
+  --eventflow-base: black;
   --eventflow-base-rgb: 178, 13, 93;
 
   --eventflow-black-rgb: 4, 0, 10;
   --eventflow-primary: #4A0AB4;
   --eventflow-primary-rgb: 74, 10, 180;
-  --eventflow-extra: #F8F8F8;
+  --eventflow-extra: black;
   --eventflow-extra-rgb: 248, 248, 248;
-  --eventflow-bdr-color: #CCCCCC;
+  --eventflow-bdr-color: black;
   --eventflow-bdr-color-rgb: 204, 204, 204;
-  background: linear-gradient(to right, #4A0AB4 0%, #46e8d0 100%);
+  background: white;
   
 
 }
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
 
+.logo-img {
+  height: 70px; /* adjust as needed */
+  width: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000 !important; /* Black text for white theme */
+ 
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000000 !important; /* Ensure link doesn't inherit colors */
+}
+
+.logo-link:hover,
+.logo-link:visited,
+.logo-link:focus {
+  color: #000000 !important; /* Maintain black color in all states */
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 60px;  /* adjust size */
+  width: auto;
+  margin-right: 12px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.6;
+}
 
 .row {
   --bs-gutter-x: 30px;
@@ -69,7 +112,25 @@ body {
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
-  color: rgba(var(--eventflow-white-rgb), .90);
+  color: #000000 !important;
+}
+
+/* Global text color override - Make all text black */
+*, 
+*::before, 
+*::after,
+h1, h2, h3, h4, h5, h6,
+p, span, div, a, li, td, th,
+.section-title__title,
+.section-title__tagline,
+.main-slider-two__sub-title,
+.main-slider-two__title,
+.main-slider-two__title .color-text,
+.services-one__title,
+.services-one__title a,
+.services-one__text,
+.services-one__read-more {
+  color: #000000 !important;
 }
 
 .body-bg-color-1 {
@@ -79,6 +140,245 @@ body {
 .body-bg-color-2 {
   background-color: var(--eventflow-white);
   color: var(--eventflow-gray);
+}
+
+/*--------------------------------------------------------------
+# Registration Page
+--------------------------------------------------------------*/
+.registration-one {
+  position: relative;
+  display: block;
+  padding: 96px 0 80px;
+}
+
+.registration-form {
+  position: relative;
+  display: block;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form__form {
+  position: relative;
+  display: block;
+}
+
+.registration-form__input-box {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.registration-form__input-box input,
+.registration-form__input-box select,
+.registration-form__input-box textarea {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 55px;
+  font-size: 16px;
+  color: #000000;
+  font-weight: 400;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 0 20px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.registration-form__input-box textarea {
+  height: auto;
+  padding: 15px 20px;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.registration-form__input-box input:focus,
+.registration-form__input-box select:focus,
+.registration-form__input-box textarea:focus {
+  border-color: #B20D5D;
+  box-shadow: 0 0 10px rgba(178, 13, 93, 0.2);
+}
+
+.registration-form__input-box select {
+  cursor: pointer;
+}
+
+.registration-form__btn-box {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.registration-form__btn {
+  background: linear-gradient(90deg, #B20D5D 0%, #4A0AB4 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.registration-form__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(178, 13, 93, 0.3);
+}
+
+/* Document Download Styles */
+.registration-form__download-section {
+  margin-bottom: 40px;
+}
+
+.registration-form__label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #000000 !important;
+  font-size: 16px;
+}
+
+.registration-form__select {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #000000 !important;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.registration-form__select:focus {
+  outline: none;
+  border-color: #B20D5D;
+  box-shadow: 0 0 0 3px rgba(178, 13, 93, 0.1);
+}
+
+.registration-form__document-info {
+  background: rgba(178, 13, 93, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #B20D5D;
+}
+
+.document-title {
+  color: #000000 !important;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.document-description {
+  color: #000000 !important;
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.registration-form__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.registration-form__btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.registration-form__documents-list {
+  margin-top: 40px;
+}
+
+.documents-list__title {
+  color: #000000 !important;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.document-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.document-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-color: #B20D5D;
+}
+
+.document-card__icon {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.document-card__icon i {
+  font-size: 48px;
+  color: #dc3545;
+}
+
+.document-card__content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.document-card__title {
+  color: #000000 !important;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.document-card__description {
+  color: #000000 !important;
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  flex-grow: 1;
+}
+
+.document-card__btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white !important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.document-card__btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
 }
 
 body.locked {
@@ -655,11 +955,30 @@ ul {
   transition: all 500ms ease;
   z-index: 999;
 }
+.ourcollaborations{
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
 
 .main-menu {
-  position: relative;
-  display: block;
-  z-index: 1;
+ position: fixed; /* always visible at top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* stays above dropdowns and content */
+  
+  /* White Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  
+  /* Smooth transitions */
+  transition: all 0.3s ease-in-out;
 }
 
 .main-menu__wrapper {
@@ -685,7 +1004,7 @@ ul {
   left: 0;
   right: 0;
   height: 1px;
-  background-color: rgba(var(--eventflow-white-rgb), .15);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   z-index: -1;
 }
 
@@ -700,7 +1019,42 @@ ul {
   padding: 10px 0;;
   padding-right: 0px;
   z-index: 1;
+}
 
+/* Logo Text Styling - Ensure black color in all states */
+.main-menu__logo .logo-text,
+.stricky-header .logo-text,
+.fixed-header .logo-text {
+  color: #000000 !important;
+}
+
+.main-menu__logo .logo-title,
+.stricky-header .logo-title,
+.fixed-header .logo-title {
+  color: #000000;
+}
+
+.logo-title {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: left;
+  font-family: 'Latin', Times, serif;
+  color: red !important;
+}
+
+.main-menu__logo .logo-subtitle,
+.stricky-header .logo-subtitle,
+.fixed-header .logo-subtitle {
+  color: #000000;
+}
+
+.logo-subtitle {
+  font-size: 15px;
+  font-weight: 500;
+  color:blue !important;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .main-menu__main-menu-box {
@@ -736,6 +1090,7 @@ ul {
 
 .main-menu__cart:hover {
   color: var(--eventflow-base);
+  
 }
 
 .main-menu__search {
@@ -776,11 +1131,50 @@ ul {
 
 .main-menu__nav-sidebar-icon :hover {
   color: var(--eventflow-base);
+
 }
 
 
 .stricky-header.main-menu {
-  background-color: var(--eventflow-black);
+  /* Enhanced White Glassmorphism for Sticky Header */
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(31, 38, 135, 0.2);
+}
+
+/* Additional White Glassmorphism Enhancements */
+.main-menu:hover {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+/* Enhanced glass transition for fixed header */
+.main-header.fixed-header .main-menu {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  box-shadow: 0 15px 50px rgba(31, 38, 135, 0.25);
+}
+
+/* Remove all hover highlights */
+.main-menu .main-menu__list>li>a:hover {
+  /* All hover effects removed */
+}
+
+/* Mobile white glass adjustments */
+@media (max-width: 991px) {
+  .main-menu {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  .stricky-header.main-menu {
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 
 
@@ -841,7 +1235,7 @@ ul {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: var(--eventflow-white);
+  color: #1a1a1a;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -865,7 +1259,6 @@ ul {
   transform: translateY(-50%);
   font-weight: 700;
   -webkit-transition: all 500ms ease;
-  transition: all 500ms ease;
   z-index: 1;
 }
 
@@ -880,7 +1273,7 @@ ul {
 .main-menu .main-menu__list>li:hover>a,
 .stricky-header .main-menu__list>li.current>a,
 .stricky-header .main-menu__list>li:hover>a {
-  color: var(--eventflow-base);
+  color: #1a1a1a; /* Keep consistent black color, no hover highlight */
 }
 
 .main-menu .main-menu__list>li>ul,
@@ -912,8 +1305,13 @@ ul {
   transition: opacity 500ms ease, visibility 500ms ease, transform 700ms ease;
   transition: opacity 500ms ease, visibility 500ms ease, transform 700ms ease, -webkit-transform 700ms ease;
   z-index: 99;
-  background-color: #fff;
-  box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.07);
+  /* White Glassmorphism effect for dropdowns */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0px 15px 50px rgba(31, 38, 135, 0.2);
 }
 
 .main-menu .main-menu__list>li>ul>li>ul>li>ul,
@@ -965,22 +1363,27 @@ ul {
   position: relative;
   font-size: 18px;
   line-height: 30px;
-  color: var(--eventflow-black);
-  font-weight: 500;
+  color: #1a1a1a;
+  font-weight: 600;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 10px 20px 10px;
   -webkit-transition: 500ms;
   transition: 500ms;
+  border-radius: 8px;
 }
 
 .main-menu .main-menu__list>li>ul>li:hover>a,
 .main-menu .main-menu__list>li>ul>li>ul>li:hover>a,
 .stricky-header .main-menu__list>li>ul>li:hover>a,
 .stricky-header .main-menu__list>li>ul>li>ul>li:hover>a {
-  background-color: var(--eventflow-base);
-  color: var(--eventflow-white);
+  background: rgba(255, 255, 255, 0.4);
+  color: #1a1a1a;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(31, 38, 135, 0.15);
 }
 
 .main-menu .main-menu__list>li>ul>li>ul,
@@ -1002,7 +1405,7 @@ ul {
   z-index: 991;
   top: 0;
   left: 0;
-  background-color: #fff;
+  background-color:#fff;
   width: 100%;
   visibility: hidden;
   -webkit-transform: translateY(-120%);
@@ -1606,12 +2009,12 @@ ul {
 
 .main-slider__shpae-1 {
   position: absolute;
-  top: 180px;
-  right: 195px;
+  bottom: -50px;
+  right: 270px;
   opacity: 0;
-  -webkit-transform: perspective(400px) rotateY(0deg) translateX(-160px);
-  -ms-transform: perspective(400px) rotateY(0deg) translateX(-160px);
-  transform: perspective(400px) rotateY(0deg) translateX(-160px);
+  -webkit-transform: perspective(400px) rotateY(0deg) translateY(160px);
+  -ms-transform: perspective(400px) rotateY(0deg) translateY(160px);
+  transform: perspective(400px) rotateY(0deg) translateY(160px);
   -webkit-transform-origin: bottom;
   -ms-transform-origin: bottom;
   transform-origin: bottom;
@@ -2403,12 +2806,27 @@ ul {
   z-index: 1;
 }
 
+/* Ensure equal height columns */
+.services-one .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services-one .row > [class*="col-"] {
+  display: flex;
+}
+
 .services-one__single {
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Equal height for all cards */
+  min-height: 320px; /* Minimum height to ensure consistency */
   padding: 38px 39px 37px;
   border-radius: 20px;
   margin-bottom: 30px;
+  transition: all 0.3s ease;
+  transform: translateY(0);
   z-index: 1;
 }
 
@@ -2439,6 +2857,12 @@ ul {
 .services-one__single:hover:before {
   visibility: hidden;
   opacity: 0;
+}
+
+/* Enhanced hover effect for the entire card */
+.services-one__single:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(242, 70, 23, 0.2);
 }
 
 .services-one__single:after {
@@ -2513,6 +2937,7 @@ ul {
 .services-one__text {
   margin-top: 14px;
   margin-bottom: 30px;
+  flex-grow: 1; /* Take up available space to push button to bottom */
 }
 
 .services-one__read-more {
@@ -2897,7 +3322,7 @@ ul {
   bottom: 30px;
   left: 30px;
   right: 30px;
-  background-color: #0E0A17;
+  background-color: white;
   padding: 24px 30px 23px;
   border-radius: 20px;
   transform: translateY(0%);
@@ -6967,7 +7392,7 @@ ul {
 .page-header {
   position: relative;
   display: block;
-  padding: 180px 0 80px;
+  padding: 250px 0 120px;
   overflow: hidden;
   z-index: 1;
 }
@@ -7000,7 +7425,7 @@ ul {
 
 .page-header__bg {
   position: absolute;
-  top: 0;
+  top: 120px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -7093,7 +7518,6 @@ ul {
 .contact-one__inner {
   position: relative;
   display: block;
-  background: linear-gradient(90deg, #B20D5D 0%, #4A0AB4 100%);
   text-align: center;
   padding: 58px 60px 70px;
 }
@@ -12062,6 +12486,7 @@ ul {
   .main-slider__title {
       font-size: 30px;
       line-height: 40px;
+    
   }
 
   .main-slider__text br {
@@ -12198,6 +12623,71 @@ ul {
       margin-left: 30px;
   }
 
+}
 
+/* Referee Page Specific Styles */
+.referees-page {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
 
+.referees-page .blog-page,
+.referees-page .collaboration-page {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+.referees-page section {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+.referees-page .page-header {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+.referees-page .page-header__bg {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+}
+
+.referees-page .page-header__bg::before {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.referees-page .section-title__title {
+    color: #000000 !important;
+}
+
+.referees-page .section-title__text {
+    color: #333333 !important;
+}
+
+/* Inspire Cards on Referee Page */
+.referees-page .inspire-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.referees-page .inspire-card__content {
+    color: #000000 !important;
+}
+
+.referees-page .inspire-card__name {
+    color: #000000 !important;
+}
+
+.referees-page .inspire-card__role {
+    color: #666666 !important;
+}
+
+.referees-page .inspire-card__quote {
+    color: #444444 !important;
+}
+
+.referees-page .inspire-card__id {
+    color: #000000 !important;
 }

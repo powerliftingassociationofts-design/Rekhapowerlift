@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import HomeMain from './HomeMain';
 import Footer from '../../components/Layout/Footer';
-import HeaderStyleEight from '../../components/Layout/Header/HeaderStyleEight';
+import HeaderStyleOne from '../../components/Layout/Header/HeaderStyleOne';
 import BackToTop from '../../components/elements/BackToTop';
 
 
@@ -24,7 +24,7 @@ const Home = () => {
 
     return (
         <React.Fragment>
-            <HeaderStyleEight />
+            <HeaderStyleOne />
              <HomeMain />
             <BackToTop scroll={isVisible} />
             <Footer />

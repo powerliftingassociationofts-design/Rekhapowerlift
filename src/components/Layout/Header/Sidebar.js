@@ -20,11 +20,11 @@ const Sidebar = ({ isSidebar, handleSidebar }) => {
                                     </Link>
                                 </div>
                                 <div className="content-box">
-                                    <h4>About Us</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam laboris.</p>
+                                    <h4>Get In Touch</h4>
+                                    <p>Powerlifting is a strength sport that focuses on maximal strength in the squat, bench press, and deadlift.</p>
                                 </div>
                                 <div className="form-inner">
-                                    <h4>Get a free quote</h4>
+                                    
                                     <form action="assets/inc/sendemail.php" className="contact-form-validated" noValidate="novalidate">
                                         <div className="form-group">
                                             <input type="text" name="name" placeholder="Name" required="" />

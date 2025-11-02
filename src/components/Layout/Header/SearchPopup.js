@@ -17,4 +17,4 @@ const SearchPopup = ({ isPopup, handlePopup }) => {
     );
 };
 
-export default SearchPopup;
+export default SearchPopup

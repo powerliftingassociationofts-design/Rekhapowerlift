@@ -44,10 +44,16 @@ const HeaderStyleOne = (props) => {
                     <div className="main-menu__wrapper-inner">
                         <div className="main-menu__left">
                         <div className="main-menu__logo">
-                            <Link to="/">
-                                <img src={navLogo} alt="Logo" />
+                            <Link to="/" className="logo-link">
+                                <img src={navLogo} alt="Logo" className="logo-img" />
+                                <div className="logo-text">
+                                <span className="logo-title">Reka</span>
+                                <br />
+                                <span className="logo-subtitle">WPC Telangana</span>
+                                </div>
                             </Link>
-                        </div>
+                            </div>
+
                         </div>
                         <div className="main-menu__main-menu-box">
                         <div className="mobile-nav__toggler" onClick={handleMobileMenu}>
@@ -79,9 +85,14 @@ const HeaderStyleOne = (props) => {
                             <div className="main-menu__wrapper-inner">
                                 <div className="main-menu__left">
                                 <div className="main-menu__logo">
-                                    <Link to="/">
-                                        <img src={navLogo} alt="Logo" />
-                                    </Link>
+                                   <Link to="/" className="logo-link">
+    <img src={navLogo} alt="Logo" className="logo-img" />
+    <div className="logo-text">
+      <span className="logo-title">Rekha</span>
+      <br />
+      <span className="logo-subtitle">WPC Telangana</span>
+    </div>
+  </Link>
                                 </div>
                                 </div>
                                 <div className="main-menu__main-menu-box">

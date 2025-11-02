@@ -152,11 +152,11 @@ export default function Home() {
                           </li>
                         ))}
                       </ul>
-                      <div className="ticket-one__btn-box">
+                      {/* <div className="ticket-one__btn-box">
                         <Link to="/pricing" className="ticket-one__btn thm-btn">
                           Buy Ticket<span className="icon-arrow-right"></span>
                         </Link>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ))}

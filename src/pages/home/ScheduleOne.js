@@ -94,12 +94,12 @@ const ScheduleOne = () => {
                                             </div>
                                             </li>
                                         </ul>
-                                        <div className="schedule-one__btn-box">
+                                        {/* <div className="schedule-one__btn-box">
                                             <Link to="/contact" className="schedule-one__btn thm-btn">
                                             Buy Ticket
                                             <span className="icon-arrow-right"></span>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                         </div>
                                     </div>
 
@@ -142,12 +142,12 @@ const ScheduleOne = () => {
                                             </div>
                                             </li>
                                         </ul>
-                                        <div className="schedule-one__btn-box">
+                                        {/* <div className="schedule-one__btn-box">
                                             <Link to="/contact" className="schedule-one__btn thm-btn">
                                             Buy Ticket
                                             <span className="icon-arrow-right"></span>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                         </div>
                                     </div>
 
@@ -189,12 +189,12 @@ const ScheduleOne = () => {
                                             </div>
                                             </li>
                                         </ul>
-                                        <div className="schedule-one__btn-box">
+                                        {/* <div className="schedule-one__btn-box">
                                             <Link to="/contact" className="schedule-one__btn thm-btn">
                                             Buy Ticket
                                             <span className="icon-arrow-right"></span>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                         </div>
                                     </div>
                                 </div>
@@ -374,11 +374,11 @@ const ScheduleOne = () => {
                                             </div>
                                             </li>
                                         </ul>
-                                        <div className="schedule-one__btn-box">
+                                        {/* <div className="schedule-one__btn-box">
                                             <Link to="/contact" className="schedule-one__btn thm-btn">
                                                 Buy Ticket <span className="icon-arrow-right"></span>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                         </div>
                                     </div>
                                     <div className="schedule-one__single">
@@ -414,11 +414,11 @@ const ScheduleOne = () => {
                                             </div>
                                             </li>
                                         </ul>
-                                        <div className="schedule-one__btn-box">
+                                        {/* <div className="schedule-one__btn-box">
                                             <Link to="/contact" className="schedule-one__btn thm-btn">
                                                 Buy Ticket <span className="icon-arrow-right"></span>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                         </div>
                                     </div>
                                     <div className="schedule-one__single">
@@ -454,11 +454,11 @@ const ScheduleOne = () => {
                                             </div>
                                             </li>
                                         </ul>
-                                        <div className="schedule-one__btn-box">
+                                        {/* <div className="schedule-one__btn-box">
                                             <Link to="/contact" className="schedule-one__btn thm-btn">
                                                 Buy Ticket <span className="icon-arrow-right"></span>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                         </div>
                                     </div>
                                 </div>

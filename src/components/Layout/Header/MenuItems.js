@@ -327,18 +327,21 @@ const MenuItems = ({ parentMenu, secondParentMenu, activeMenu }) => {
           Collaboration
         </Link>
       </li>
-
-      <li>
-        <Link to="/inspire" className={activeMenu === '/Inspire' ? 'active-menu' : ''}>
-          Inspire
-        </Link>
+      <li className={parentMenu === 'inspire' ? 'dropdown current-menu-item' : 'dropdown'}>
+        <Link to="/inspire/success-stories">InKSPIRE</Link>
+        <ul className="sub-menu">
+          <li>
+            <Link to="/inspire/success-stories" className={activeMenu === '/inspire/success-stories' ? 'active-menu' : ''}>
+              Success Stories
+            </Link>
+          </li>
+        </ul>
       </li>
       <li>
         <Link to="/gallery" className={activeMenu === '/gallery' ? 'active-menu' : ''}>
-          Gallery
+          bLOGS
         </Link>
       </li>
-
       <li>
         <Link to="/results" className={activeMenu === '/results' ? 'active-menu' : ''}>
           Results
@@ -349,10 +352,17 @@ const MenuItems = ({ parentMenu, secondParentMenu, activeMenu }) => {
           Referees
         </Link>
       </li>
-      <li className={parentMenu === 'Contact' ? 'current-menu-item' : ''}>
-        <Link to="/contact" className={activeMenu === '/contact' ? 'active-menu' : ''}>
-          Contact
+      <li className={parentMenu === 'Registration' ? 'current-menu-item' : ''}>
+        <Link to="/registration" className={activeMenu === '/registration' ? 'active-menu' : ''}>
+          Registration
         </Link>
+        <ul className="sub-menu">
+          <li>
+        <Link to="/contact" className={activeMenu === '/contact' ? 'active-menu' : ''}>
+          Contact Us
+        </Link>
+        </li>
+        </ul>
       </li>
     </ul>
   );

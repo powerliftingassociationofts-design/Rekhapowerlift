@@ -25,7 +25,7 @@ const HomeMain = () => {
 			<EventDirection />
 			<GalleryOne />
 			<ScheduleOne />
-			
+			<BrandOne />
 			<BlogOne />
 			<CTAOne />
 		</React.Fragment>

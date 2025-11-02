@@ -16,9 +16,14 @@ const Footer = () => {
             <div className="container">
                 <div className="site-footer__top-inner">
                     <div className="site-footer__logo">
-                        <Link to="/">
-                            <img src={footerLogo} alt="" />
-                        </Link>
+                        <Link to="/" className="logo-link">
+                                        <img src={footerLogo} alt="Logo" className="logo-img" />
+                                        <div className="logo-text">
+                                        <span className="logo-title" style={{ color: 'red' }}>Rekha</span>
+                                        <br/>
+                                        <span className="logo-subtitle" style={{ color: 'blue' }}>WPC Telangana</span>
+                                        </div>
+                                    </Link>
                     </div>
                     <div className="site-footer__social">
                         <Link to="#"><i className="icon-facebook"></i></Link>

@@ -1,7 +1,95 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
+import emailConfig from '../../config/emailConfig';
 
 const ContactMain = () => {
+  const form = useRef();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    address: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  // Validate form data
+  const validateForm = () => {
+    const { name, email, phone, message } = formData;
+    
+    if (!name.trim()) {
+      alert('Please enter your name');
+      return false;
+    }
+    
+    if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) {
+      alert('Please enter a valid email address');
+      return false;
+    }
+    
+    if (!phone.trim()) {
+      alert('Please enter your phone number');
+      return false;
+    }
+    
+    if (!message.trim()) {
+      alert('Please enter your message');
+      return false;
+    }
+    
+    return true;
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.sendForm(
+        emailConfig.serviceId,
+        emailConfig.templateId,
+        form.current,
+        emailConfig.publicKey
+      );
+
+      console.log('Email sent successfully:', result.text);
+      setSubmitStatus('success');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
 
   return (
@@ -16,9 +104,9 @@ const ContactMain = () => {
 We’re proud to be your trusted platform for all things powerlifting — reach out to us anytime!
             </p>
             <form
+              ref={form}
               className="contact-form-validated contact-one__form"
-              action="assets/inc/sendemail.php"
-              method="post"
+              onSubmit={handleSubmit}
               noValidate
             >
               <div className="row">
@@ -27,6 +115,8 @@ We’re proud to be your trusted platform for all things powerlifting — reach 
                     <input
                       type="text"
                       name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       placeholder="Your Name"
                       required
                     />
@@ -37,6 +127,8 @@ We’re proud to be your trusted platform for all things powerlifting — reach 
                     <input
                       type="email"
                       name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       placeholder="Your Email"
                       required
                     />
@@ -47,6 +139,8 @@ We’re proud to be your trusted platform for all things powerlifting — reach 
                     <input
                       type="text"
                       name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       placeholder="Phone Number"
                       required
                     />
@@ -56,7 +150,9 @@ We’re proud to be your trusted platform for all things powerlifting — reach 
                   <div className="contact-one__input-box">
                     <input
                       type="text"
-                      name="Adress"
+                      name="address"
+                      value={formData.address}
+                      onChange={handleInputChange}
                       placeholder="Address"
                       required
                     />
@@ -67,6 +163,8 @@ We’re proud to be your trusted platform for all things powerlifting — reach 
                   <div className="contact-one__input-box text-message-box">
                     <textarea
                       name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Your Message"
                     ></textarea>
                   </div>
@@ -74,14 +172,31 @@ We’re proud to be your trusted platform for all things powerlifting — reach 
                     <button
                       type="submit"
                       className="thm-btn contact-one__btn"
+                      disabled={isSubmitting}
                     >
-                      Submit Now<span className="icon-arrow-right"></span>
+                      {isSubmitting ? 'Sending...' : 'Submit Now'}
+                      <span className="icon-arrow-right"></span>
                     </button>
                   </div>
                 </div>
               </div>
             </form>
-            <div className="result"></div>
+            <div className="result">
+              {submitStatus === 'success' && (
+                <div className="alert alert-success mt-3">
+                  <p style={{ color: 'green', marginBottom: '0' }}>
+                    ✅ Thank you! Your message has been sent successfully. We'll get back to you soon.
+                  </p>
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="alert alert-danger mt-3">
+                  <p style={{ color: 'red', marginBottom: '0' }}>
+                    ❌ Sorry, there was an error sending your message. Please try again or contact us directly.
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -135,7 +250,7 @@ We’re proud to be your trusted platform for all things powerlifting — reach 
                 </div>
                 <h3 className="contact-two__title">Contact</h3>
                 <p className="contact-two__text">
-                  <a href="#">Inturi Rekha</a>,{" "}
+                  <span>Inturi Rekha</span>,{" "}
                   {/* <a href="tel:017485962546">017485962546</a> */}
                 </p>
                 <p className="contact-two__text">

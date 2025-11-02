@@ -71,11 +71,11 @@ export default function Banner() {
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="main-slider__content">
-                      <p className="main-slider__sub-title">WPC – Telangana State</p>
+                      <p className="main-slider__sub-title" style={{ color: 'black' }}>WPC – Telangana State</p>
                       <h2 className="main-slider__title">
-                        Welcome to <br /> <span>WPC–Telangana!</span>
+                        Welcome to <br /> <span style={{ color: 'black', fontFamily: 'system-ui', }}>WPC–Telangana!</span>
                       </h2>
-                      <p className="main-slider__text">
+                      <p className="main-slider__text" style={{ color: 'black' }}>
                         We are the official state federation under WPC–India, dedicated to promoting the sport of <br />
                         Powerlifting in Telangana. <br />
                         Our mission is to build a community of strong, disciplined athletes and to provide every lifter <br /> — from beginners to professionals — the opportunity to compete on district, state, national, <br /> and international stages. <br />
@@ -135,11 +135,11 @@ export default function Banner() {
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="main-slider__content">
-                      <p className="main-slider__sub-title">World Powerlifting Congress</p>
-                      <h2 className="main-slider__title">
-                        Building Champions <br /> <span>Across Telangana</span>
+                      <p className="main-slider__sub-title" style={{ color: 'black' }}>World Powerlifting Congress</p>
+                      <h2 className="main-slider__title" style={{ color: 'black' }}>
+                        Building Champions <br /> <span style={{ color: 'black', fontFamily: 'system-ui' }}>Across Telangana</span>
                       </h2>
-                      <p className="main-slider__text">
+                      <p className="main-slider__text" style={{ color: 'black' }}>
                         We organize and regulate Powerlifting, Bench Press, and Deadlift championships under <br />
                         international standards. <br />
                         Our goal is to inspire athletes, promote strength sports in Telangana, and create transparent <br />
@@ -200,11 +200,11 @@ export default function Banner() {
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="main-slider__content">
-                      <p className="main-slider__sub-title">Recognized by WPC–India</p>
-                      <h2 className="main-slider__title">
-                        Compete on <br /> <span>International Stage</span>
+                      <p className="main-slider__sub-title" style={{ color: 'black' }}>Recognized by WPC–India</p>
+                      <h2 className="main-slider__title" style={{ color: 'black' }}>
+                        Compete on <br /> <span style={{ color: 'black', fontFamily: 'system-ui' }}>International Stage</span>
                       </h2>
-                      <p className="main-slider__text">
+                      <p className="main-slider__text" style={{ color: 'black' }}>
                         To empower Telangana athletes by providing them with structured training, fair competition, <br />
                         and international recognition under WPC regulations. <br />
                         Our vision is to make Telangana one of India's strongest and most successful states <br />
