@@ -8,14 +8,16 @@ import inspireimg2 from '../../../assets/images/Inspire/img2.jpg';
 import inspireimg3 from '../../../assets/images/Inspire/img3.jpeg';
 import inspireimg4 from '../../../assets/images/Inspire/img4.jpeg';
 import inspireimg5 from '../../../assets/images/Inspire/img5.jpeg';
-import rajeshKumarPDF from '../../../assets/pdfs/Diza_compressed.pdf';
-import deepikaRaoPDF from '../../../assets/pdfs/Aashritha _compressed.pdf';
-import imranShaikPDF from '../../../assets/pdfs/imran-shaik-story.pdf';
-import snehaReddyPDF from '../../../assets/pdfs/sneha-reddy-story.pdf';
-import deepaKumarPDF from '../../../assets/pdfs/deepa-kumar-story.pdf';
-import vikramSinghPDF from '../../../assets/pdfs/vikram-singh-story.pdf';
-import anjaliMehraPDF from '../../../assets/pdfs/anjali-mehra-story.pdf';
-import raghavVarmaPDF from '../../../assets/pdfs/raghav-varma-story.pdf';
+
+// PDF file variables set to empty string or placeholder. Add actual URLs when available.
+const rajeshKumarPDF = '';
+const deepikaRaoPDF = '';
+const imranShaikPDF = '';
+const snehaReddyPDF = '';
+const deepaKumarPDF = '';
+const vikramSinghPDF = '';
+const anjaliMehraPDF = '';
+const raghavVarmaPDF = '';
 
 // Set up PDF.js worker
 pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.mjs`;
