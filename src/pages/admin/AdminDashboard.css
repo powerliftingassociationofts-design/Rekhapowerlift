@@ -1,0 +1,252 @@
+.admin-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.admin-header {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.admin-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin-logo {
+  height: 50px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.admin-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.admin-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.seed-data-btn {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+.seed-data-btn:hover {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+}
+
+.seed-data-btn i {
+  margin-right: 6px;
+}
+
+.admin-header h1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.admin-header h1 i {
+  margin-right: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+}
+
+.logout-btn i {
+  margin-right: 8px;
+}
+
+.admin-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-btn {
+  background: white;
+  border: 2px solid #e9ecef;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #6c757d;
+}
+
+.nav-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.nav-btn.active {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+}
+
+.nav-btn i {
+  margin-right: 8px;
+}
+
+.admin-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.admin-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+}
+
+.loading-logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  animation: logoFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+.admin-loading i {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.admin-loading p {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .admin-header-content {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .admin-brand {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .admin-logo {
+    height: 40px;
+  }
+  
+  .admin-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .seed-data-btn,
+  .logout-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .admin-header h1 {
+    font-size: 1.25rem;
+  }
+  
+  .admin-nav {
+    padding: 15px 20px;
+    flex-direction: column;
+  }
+  
+  .nav-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .admin-content {
+    padding: 0 15px 30px;
+  }
+}
