@@ -1,182 +1,138 @@
-import React from "react";
-import { FaMedal, FaDumbbell } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import Footer from '../../components/Layout/Footer';
+import BackToTop from '../../components/elements/BackToTop';
+import SiteBreadcrumb from '../../components/Common/Breadcumb';
+import Header from "../../components/Layout/Header";
+import CtaTwo from '../../components/Common/CtaSection/CtaTwo';
+import S3Image from '../../components/Common/S3Image';
+
+import "./results.css";
+
+const bannerbg = `/images/resources/schedule-one-1-6.jpg`;
+const navImg1 = `/images/resources/logo-1.png`;
+
+
+// Helper function to get S3 keys for images
+// All images now served from AWS S3 bucket
+function getS3Images(folderPath, count) {
+  const images = [];
+  for (let i = 1; i <= count; i++) {
+    images.push(`results/${folderPath}/${i}.png`);
+  }
+  return images;
+}
+
+const resultsData = {
+  "AF FITNESS STUDIO": getPublicImages("AF FITNESS STUDIO", 5),
+  "DISTRICT COMBINED RESULTS": getPublicImages("DISTRICT COMBINED RESULTS", 8),
+  "FITNESS SECRET": getPublicImages("FITNESS SECRET", 7),
+  "Gym point": getPublicImages("Gym point", 6),
+  "NATIONAL SELECTED PLAYERS": getPublicImages("NATIONAL SELECTED PLAYERS", 35),
+  "Origin Fitness": getPublicImages("Origin Fitness", 6),
+  "Ozzie FITNESS CENTER": getPublicImages("Ozzie FITNESS CENTER", 6),
+  "Pottens FITNESS": getPublicImages("Pottens FITNESS", 5),
+  "SD Fitness": getPublicImages("SD Fitness", 4),
+  "STATE SELECTED PLAYERS LIST": getPublicImages("STATE SELECTED PLAYERS LIST", 6),
+};
+
+const resultDescriptions = {
+  "AF FITNESS STUDIO": "AF Fitness Studio athletes showcased exceptional strength and discipline.",
+  "DISTRICT COMBINED RESULTS": "District-level champions who performed outstandingly across categories.",
+  "FITNESS SECRET": "Team Fitness Secret continues to inspire with powerful performances.",
+  "Gym point": "Gym Point members delivered strong results with great competitive spirit.",
+  "NATIONAL SELECTED PLAYERS": "Athletes who qualified for National championship level.",
+  "Origin Fitness": "Origin Fitness participants demonstrated superior conditioning and performance.",
+  "Ozzie FITNESS CENTER": "Ozzie Fitness Center athletes displayed remarkable discipline.",
+  "Pottens FITNESS": "Pottens Fitness continues developing rising champions.",
+  "SD Fitness": "SD Fitness has shown continuous progress with strong results.",
+  "STATE SELECTED PLAYERS LIST": "Athletes selected to represent the state in competitions."
+};
 
 const ResultsMain = () => {
-  const results = [
-    {
-      id: 1,
-      category: "Men's 75kg",
-      name: "Rohit Sharma",
-      gym: "Iron Beast Gym",
-      medal: "Gold",
-      event: "Benchpress",
-      image:
-        "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-      id: 2,
-      category: "Women's 63kg",
-      name: "Priya Reddy",
-      gym: "Phoenix Fitness",
-      medal: "Silver",
-      event: "Deadlift",
-      image:
-      "https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-      id: 3,
-      category: "Junior 67.5kg",
-      name: "Arjun Kumar",
-      gym: "Muscle Factory",
-      medal: "Bronze",
-      event: "Powerlifting",
-      image:
-       "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=80",
-    },
-  ];
+  const { category } = useParams();
+  const decodedCategory = decodeURIComponent(category);
+  const images = resultsData[decodedCategory] || [];
+  const description = resultDescriptions[decodedCategory] || "";
+
+  const [isVisible, setIsVisible] = useState(false);
+  const handleScroll = () => setIsVisible(window.scrollY > 300);
+
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // ✅ LIGHTBOX / FULLSCREEN VIEWER STATE
+  const [currentIndex, setCurrentIndex] = useState(null);
+
+  const openViewer = (index) => setCurrentIndex(index);
+  const closeViewer = () => setCurrentIndex(null);
+
+  const showNext = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+  const showPrev = () =>
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+
+  // ✅ Swipe Support
+  let startX = 0;
+  const onTouchStart = (e) => (startX = e.touches[0].clientX);
+  const onTouchMove = (e) => {
+    if (!startX) return;
+    let endX = e.touches[0].clientX;
+    if (startX - endX > 50) showNext();
+    if (endX - startX > 50) showPrev();
+  };
 
   return (
-    <section className="results-page py-5">
-      <div className="container">
-        {/* Title Section */}
-        <div className="section-title text-center mb-5">
-          <h2 className="section-title__title">
-            🏆 WPC-Telangana Open District Championship 2025
-          </h2>
-          <p className="section-title__text">
-            Congratulations to all our outstanding athletes who showcased power,
-            dedication, and sportsmanship. Here are the top results from the
-            championship!
-          </p>
+    <React.Fragment>
+
+      <Header navImg={navImg1} parentMenu="Results" activeMenu="/results" />
+
+      <SiteBreadcrumb pageTitle="Results" pageName="Results" breadcrumbsImg={bannerbg} />
+
+      <div className="container mx-auto px-4 py-16">
+        <Link to="/results" className="inline-block mb-8 bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700 transition-all">
+          ← Back to Results
+        </Link>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-4xl font-extrabold text-pink-600 mb-6">{decodedCategory}</h2>
+            <p className="text-gray-700 text-lg leading-relaxed">{description}</p>
+          </div>
+
+          <div className="center-image-grid">
+            {images.map((src, index) => (
+              <div key={index} className="image-card" onClick={() => openViewer(index)}>
+                <img 
+                  src={src} 
+                  alt={`${decodedCategory} result ${index + 1}`}
+                  onError={(e) => {
+                    console.error(`Failed to load image: ${src}`);
+                    e.target.style.display = 'none';
+                  }}
+                  onLoad={() => console.log(`✓ Loaded: ${src}`)}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Results Grid */}
-        <div className="row">
-          {results.map((result) => (
-            <div
-              key={result.id}
-              className="col-xl-4 col-lg-4 col-md-6 mb-4 wow fadeInUp"
-              data-wow-delay={`${result.id * 150}ms`}
-            >
-              <div className="result-card">
-                <div className="result-card__image">
-                  <img src={result.image} alt={result.name} />
-                  <div className={`medal-badge medal-${result.medal.toLowerCase()}`}>
-                    <FaMedal /> {result.medal}
-                  </div>
-                </div>
-                <div className="result-card__content">
-                  <h3>{result.category}</h3>
-                  <p>
-                    <strong>Athlete:</strong> {result.name}
-                  </p>
-                  <p>
-                    <strong>Gym:</strong> {result.gym}
-                  </p>
-                  <p>
-                    <strong>Event:</strong> {result.event}
-                  </p>
-                  <FaDumbbell className="result-icon" />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <CtaTwo />
+        <BackToTop scroll={isVisible} />
+        <Footer />
       </div>
 
-      {/* Inline CSS */}
-      <style>{`
-        .result-card {
-          background: #fff;
-          border-radius: 15px;
-          overflow: hidden;
-          box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          cursor: pointer;
-        }
-
-        .result-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-        }
-
-        .result-card__image {
-          position: relative;
-          height: 220px;
-          overflow: hidden;
-        }
-
-        .result-card__image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.4s ease;
-        }
-
-        .result-card:hover img {
-          transform: scale(1.08);
-        }
-
-        .medal-badge {
-          position: absolute;
-          top: 15px;
-          right: 15px;
-          padding: 8px 15px;
-          border-radius: 20px;
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-          gap: 5px;
-          color: #fff;
-          font-size: 0.9rem;
-        }
-
-        .medal-gold {
-          background: linear-gradient(45deg, #FFD700, #E6B800);
-        }
-        .medal-silver {
-          background: linear-gradient(45deg, #C0C0C0, #A9A9A9);
-        }
-        .medal-bronze {
-          background: linear-gradient(45deg, #CD7F32, #A0522D);
-        }
-
-        .result-card__content {
-          padding: 20px;
-          text-align: center;
-        }
-
-        .result-card__content h3 {
-          color: #ff1493; /* dark pink for category */
-          font-size: 1.3rem;
-          margin-bottom: 10px;
-        }
-
-        .result-card__content p {
-          margin: 5px 0;
-          color: #555;
-        }
-
-        .result-icon {
-          font-size: 1.5rem;
-          color: #ff1493; /* dark pink for dumbbell icon */
-          margin-top: 10px;
-        }
-
-        .section-title__title {
-          font-weight: 700;
-          color: #ff1493;
-          font-size: 2rem;
-        }
-
-        .section-title__text {
-          color: #fff;
-          font-weight: 700;
-          max-width: 700px;
-          margin: 0 auto;
-        }
-      `}</style>
-    </section>
+      {/* ✅ Fullscreen Image Viewer */}
+      {currentIndex !== null && (
+        <div className="viewer-overlay" onClick={closeViewer} onTouchStart={onTouchStart} onTouchMove={onTouchMove}>
+          <span className="viewer-close" onClick={closeViewer}>×</span>
+          <span className="viewer-prev" onClick={(e) => { e.stopPropagation(); showPrev(); }}>‹</span>
+          <img src={images[currentIndex]} alt="" className="viewer-image" />
+          <span className="viewer-next" onClick={(e) => { e.stopPropagation(); showNext(); }}>›</span>
+        </div>
+      )}
+    </React.Fragment>
   );
 };
 

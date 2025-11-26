@@ -3,7 +3,7 @@ import BackToTop from '../../components/elements/BackToTop';
 import Header from '../../components/Layout/Header';
 import Footer from '../../components/Layout/Footer';
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
-import bannerbg from '../../assets/images/backgrounds/page-header-bg.jpg';
+const bannerbg = `${process.env.PUBLIC_URL}/images/backgrounds/page-header-bg.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
 import RegistrationMain from './RegistrationMain';
 
 const Registration = () => {

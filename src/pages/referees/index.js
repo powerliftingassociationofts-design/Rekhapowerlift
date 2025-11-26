@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
+
 import BackToTop from '../../components/elements/BackToTop';
 import Header from '../../components/Layout/Header';
-import navImg1 from '../../assets/images/resources/logo-1.png';
+
 import Footer from '../../components/Layout/Footer';
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
-import bannerbg from '../../assets/images/backgrounds/page-header-bg.jpg';
+
 import CtaTwo from '../../components/Common/CtaSection/CtaTwo';
 import RefereesMain from './RefereesMain';
+
+const navImg1 = `${process.env.PUBLIC_URL}/images/resources/logo-1.png`;
+const bannerbg = `${process.env.PUBLIC_URL}/images/backgrounds/page-header-bg.jpg`;
 
 
 // Breadcrumbs Background Image
@@ -37,16 +41,17 @@ const Referees = () => {
             activeMenu="/Referees"
         />
         {/* SiteBreadcrumb */}
-        <SiteBreadcrumb
+        <div style={{ transform: 'scale(0.8)', transformOrigin: 'top center' }}>
+          <SiteBreadcrumb
             pageTitle="Referees"
-          pageName={
-    <span style={{ color: '#000000', fontSize: '25px', fontWeight: '700' }}>
-      Referees
-    </span>
-  }
-            // pageName="Referees"
+            pageName={
+              <span style={{ color: '#000000', fontSize: '20px', fontWeight: '700', margin: '0px' }}>
+                Referees
+              </span>
+            }
             breadcrumbsImg={bannerbg}
-        />
+          />
+        </div>
         {/* SiteBreadcrumb */}
         <RefereesMain/>
         {/*cta-section */}
@@ -54,6 +59,33 @@ const Referees = () => {
         {/*cta-section end */}
         <BackToTop scroll={isVisible} />
         <Footer />
+        
+        {/* Custom Breadcrumb Styling */}
+        <style>{`
+          .page-header {
+            padding: 40px 0 !important;
+            min-height: 200px !important;
+          }
+          
+          .page-header h2 {
+            color: #000000 !important;
+            font-size: 1.8rem !important;
+          }
+          
+          .thm-breadcrumb li,
+          .thm-breadcrumb li a,
+          .thm-breadcrumb li span {
+            color: #000000 !important;
+          }
+          
+          .thm-breadcrumb li a:hover {
+            color: #333333 !important;
+          }
+          
+          .icon-angle-left {
+            color: #000000 !important;
+          }
+        `}</style>
     </React.Fragment>
     </div>
     );

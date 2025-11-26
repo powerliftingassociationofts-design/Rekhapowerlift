@@ -9,7 +9,6 @@ import scheduleImg5 from '../../assets/images/resources/schedule-one-1-5.jpg';
 import scheduleImg6 from '../../assets/images/resources/schedule-one-1-6.jpg';
 import scheduleImg7 from '../../assets/images/resources/schedule-one-1-7.jpg';
 import scheduleImg8 from '../../assets/images/resources/schedule-one-1-8.jpg';
-import scheduleImg9 from '../../assets/images/resources/schedule-one-1-9.jpg';
 
 const ScheduleOne = () => {
     const [activeTab, setActiveTab] = useState('1st-day');
@@ -89,7 +88,7 @@ const ScheduleOne = () => {
                                             </div>
                                             <div className="text">
                                                 <p>
-                                                Mirpur 01 Road N 12 Dhaka <br /> Bangladesh
+                                                Mirpur 01 Road N 12 Dhaka <br /> Hyderabad
                                                 </p>
                                             </div>
                                             </li>
@@ -137,7 +136,7 @@ const ScheduleOne = () => {
                                             </div>
                                             <div className="text">
                                                 <p>
-                                                Mirpur 01 Road N 12 Dhaka <br /> Bangladesh
+                                                Mirpur 01 Road N 12 Dhaka <br /> Hyderabad
                                                 </p>
                                             </div>
                                             </li>
@@ -184,7 +183,7 @@ const ScheduleOne = () => {
                                             </div>
                                             <div className="text">
                                                 <p>
-                                                Mirpur 01 Road N 12 Dhaka <br /> Bangladesh
+                                                Mirpur 01 Road N 12 Dhaka <br /> Hyderabad
                                                 </p>
                                             </div>
                                             </li>
@@ -234,16 +233,16 @@ const ScheduleOne = () => {
                                             </div>
                                             <div className="text">
                                                 <p>
-                                                Mirpur 01 Road N 12 Dhaka <br /> Bangladesh
+                                                Mirpur 01 Road N 12 Dhaka <br /> Hyderabad
                                                 </p>
                                             </div>
                                             </li>
                                         </ul>
-                                        <div className="schedule-one__btn-box">
+                                        {/* <div className="schedule-one__btn-box">
                                             <Link to="/contact" className="schedule-one__btn thm-btn">
                                             Buy Ticket <span className="icon-arrow-right"></span>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                         </div>
                                     </div>
 
@@ -279,16 +278,16 @@ const ScheduleOne = () => {
                                             </div>
                                             <div className="text">
                                                 <p>
-                                                Mirpur 01 Road N 12 Dhaka <br /> Bangladesh
+                                                Mirpur 01 Road N 12 Dhaka <br /> Hyderabad
                                                 </p>
                                             </div>
                                             </li>
                                         </ul>
-                                        <div className="schedule-one__btn-box">
+                                        {/* <div className="schedule-one__btn-box">
                                             <Link to="/contact" className="schedule-one__btn thm-btn">
                                             Buy Ticket <span className="icon-arrow-right"></span>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                         </div>
                                     </div>
 
@@ -324,16 +323,16 @@ const ScheduleOne = () => {
                                             </div>
                                             <div className="text">
                                                 <p>
-                                                Mirpur 01 Road N 12 Dhaka <br /> Bangladesh
+                                                Mirpur 01 Road N 12 Dhaka <br /> Hyderabad
                                                 </p>
                                             </div>
                                             </li>
                                         </ul>
-                                        <div className="schedule-one__btn-box">
+                                        {/* <div className="schedule-one__btn-box">
                                             <Link to="/contact" className="schedule-one__btn thm-btn">
                                             Buy Ticket <span className="icon-arrow-right"></span>
                                             </Link>
-                                        </div>
+                                        </div> */}
                                         </div>
                                     </div>
                                 </div>
@@ -370,7 +369,7 @@ const ScheduleOne = () => {
                                                 <span className="icon-pin"></span>
                                             </div>
                                             <div className="text">
-                                                <p>Mirpur 01 Road N 12 Dhaka <br /> Bangladesh</p>
+                                                <p>Mirpur 01 Road N 12 Dhaka <br /> Hyderabad</p>
                                             </div>
                                             </li>
                                         </ul>
@@ -402,7 +401,7 @@ const ScheduleOne = () => {
                                                 <span className="icon-clock"></span>
                                             </div>
                                             <div className="text">
-                                                <p>10 Am To 10 Pm <br /> 20 April 2024</p>
+                                                <p>10 Am To 10 Pm <br /> 20 April 2025</p>
                                             </div>
                                             </li>
                                             <li>
@@ -410,7 +409,7 @@ const ScheduleOne = () => {
                                                 <span className="icon-pin"></span>
                                             </div>
                                             <div className="text">
-                                                <p>Mirpur 01 Road N 12 Dhaka <br /> Bangladesh</p>
+                                                <p>Mirpur 01 Road N 12 Dhaka <br /> Hyderabad</p>
                                             </div>
                                             </li>
                                         </ul>
@@ -433,7 +432,7 @@ const ScheduleOne = () => {
                                         </p>
                                         </div>
                                         <div className="schedule-one__img">
-                                        <img src={scheduleImg9} alt="" />
+                                        <img src={scheduleImg5} alt="" />
                                         </div>
                                         <div className="schedule-one__address-and-btn-box">
                                         <ul className="list-unstyled schedule-one__address">
@@ -442,7 +441,7 @@ const ScheduleOne = () => {
                                                 <span className="icon-clock"></span>
                                             </div>
                                             <div className="text">
-                                                <p>10 Am To 10 Pm <br /> 20 April 2024</p>
+                                                <p>10 Am To 10 Pm <br /> 20 April 2025</p>
                                             </div>
                                             </li>
                                             <li>
@@ -450,7 +449,7 @@ const ScheduleOne = () => {
                                                 <span className="icon-pin"></span>
                                             </div>
                                             <div className="text">
-                                                <p>Mirpur 01 Road N 12 Dhaka <br /> Bangladesh</p>
+                                                <p>Mirpur 01 Road N 12 Dhaka <br /> Hyderabad</p>
                                             </div>
                                             </li>
                                         </ul>

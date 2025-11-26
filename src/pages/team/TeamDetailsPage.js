@@ -10,22 +10,22 @@ import SiteBreadcrumb from '../../components/Common/Breadcumb';
 import CtaTwo from '../../components/Common/CtaSection/CtaTwo';
 
 // Assets
-import navImg1 from '../../assets/images/resources/logo-1.png';
-import bannerbg from '../../assets/images/backgrounds/page10-header-bg.jpg';
+const navImg1 = `${process.env.PUBLIC_URL}/images/resources/logo-1.png`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const bannerbg = `${process.env.PUBLIC_URL}/images/backgrounds/page10-header-bg.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
 
 // Team images
-import TeamImg1 from '../../assets/images/team/team-1-1.jpg';
-import TeamImg2 from '../../assets/images/team/team-1-2.jpg';
-import TeamImg3 from '../../assets/images/team/team-1-3.jpg';
-import TeamImg4 from '../../assets/images/team/team-1-4.jpg';
-import TeamImg5 from '../../assets/images/team/team-1-5.jpg';
-import TeamImg6 from '../../assets/images/team/team-1-6.jpg';
-import TeamImg7 from '../../assets/images/team/team-1-7.jpg';
-import TeamImg8 from '../../assets/images/team/team-1-8.jpg';
-import TeamImg9 from '../../assets/images/team/team-1-9.jpg';
-import TeamImg10 from '../../assets/images/team/team-1-10.jpg';
-import TeamImg11 from '../../assets/images/team/team-1-11.jpg';
-import TeamImg12 from '../../assets/images/team/team-1-12.jpg';
+const TeamImg1 = `${process.env.PUBLIC_URL}/images/team/team-1-1.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg2 = `${process.env.PUBLIC_URL}/images/team/team-1-2.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg3 = `${process.env.PUBLIC_URL}/images/team/team-1-3.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg4 = `${process.env.PUBLIC_URL}/images/team/team-1-4.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg5 = `${process.env.PUBLIC_URL}/images/team/team-1-5.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg6 = `${process.env.PUBLIC_URL}/images/team/team-1-6.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg7 = `${process.env.PUBLIC_URL}/images/team/team-1-7.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg8 = `${process.env.PUBLIC_URL}/images/team/team-1-8.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg9 = `${process.env.PUBLIC_URL}/images/team/team-1-9.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg10 = `${process.env.PUBLIC_URL}/images/team/team-1-10.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg11 = `${process.env.PUBLIC_URL}/images/team/team-1-11.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const TeamImg12 = `${process.env.PUBLIC_URL}/images/team/team-1-12.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
 
 // ----------------------------------------------
 // Team Member Data

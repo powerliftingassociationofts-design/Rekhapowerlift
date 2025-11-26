@@ -148,8 +148,8 @@ export default function EventDetails() {
     <section className="event-details">
       <div className="container">
         <div className="row">
-          {/* Left side */}
-          <div className="col-xl-8 col-lg-7">
+          {/* Main Content - Full Width */}
+          <div className="col-xl-12 col-lg-12">
             <div className="event-details__left">
               {/* ✅ Main Image */}
               <div className="event-details__img">
@@ -246,65 +246,6 @@ export default function EventDetails() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right side */}
-          <div className="col-xl-4 col-lg-5">
-            <div className="event-details__right">
-              <div className="event-details__speakers">
-                <h3 className="event-details__speakers-title">Speakers</h3>
-                <p className="event-details__speakers-sub-title">
-                  10 Speakers
-                </p>
-                <p className="event-details__speakers-text">
-                  Join industry-leading experts sharing insights, design trends,
-                  and innovation stories.
-                </p>
-              </div>
-
-              <div className="event-details__ticket">
-                <h3 className="event-details__ticket-title">
-                  Are you Interested??
-                </h3>
-                <p className="event-details__ticket-sub-title">Call Us Now</p>
-                <div className="event-details__ticket-icon">
-                  <span className="icon-call"></span>
-                </div>
-                <p className="event-details__ticket-sub-title-2">
-                  For fast service
-                </p>
-                <h3 className="event-details__ticket-number">
-                  <Link to="tel:+91-7330778111">+91-7330778111</Link>
-                </h3>
-              </div>
-
-              <div className="event-details__ticket-two">
-                <h3 className="event-details__ticket-two-title">
-                  Want to join this event?
-                </h3>
-                <p className="event-details__ticket-two-text">
-                  Just connect us through our social media platforms,we will eroll u 
-                </p>
-                <div className="event-details__ticket-two-btn-box">
-                  <Link
-                    to="#"
-                    className="event-details__ticket-two-btn thm-btn"
-                  >
-                    Membership <span className="icon-arrow-right"></span>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="event-details__location">
-                <h3 className="event-details__location-title">Location</h3>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31785.123456!2d78.2820!3d17.5206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb…somehash…!2sVandanapuri%20Colony%20Hyderabad!5e0!3m2!1sen!2sin!4v169xxx"
-                  className="google-map__one"
-                  allowFullScreen
-                  title="Event Location"
-                ></iframe>
               </div>
             </div>
           </div>

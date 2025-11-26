@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import BackToTop from "../../components/elements/BackToTop";
 import Header from "../../components/Layout/Header";
-import navImg1 from "../../assets/images/resources/logo-1.png";
+const navImg1 = `${process.env.PUBLIC_URL}/images/resources/logo-1.png`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
 import Footer from "../../components/Layout/Footer";
 import SiteBreadcrumb from "../../components/Common/Breadcumb";
-import bannerbg from "../../assets/images/backgrounds/page6-header-bg.jpg";
+const bannerbg = `${process.env.PUBLIC_URL}/images/backgrounds/page6-header-bg.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
 import CtaTwo from "../../components/Common/CtaSection/CtaTwo";
-import inspireimg1 from '../../assets/images/Inspire/img1.jpg';
+const inspireimg1 = `${process.env.PUBLIC_URL}/images/team/Adobe Express - file.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const inspireimg2 = `${process.env.PUBLIC_URL}/images/team/team-1-3.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const inspireimg3 = `${process.env.PUBLIC_URL}/images/team/Adobe Express - file (1).jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
 
 
 const InspireDetails = () => {
@@ -24,139 +26,46 @@ const InspireDetails = () => {
   const stories = [
     {
       id: 1,
-      name: "Rajesh Kumar",
-      role: "National Powerlifter",
+      name: "Inturi Rekha",
+      role: "International Referee",
       image: inspireimg1,
-      quote: "Powerlifting taught me discipline and resilience. WPC Telangana gave me the platform to prove my strength at the national level.",
+      quote: "A visionary leader and champion powerlifter driving excellence in sports and leadership.",
       achievements: [
-        "Gold Medal - WPC India Nationals 2024",
-        "Best Lifter Award - Telangana Open 2023",
-        "Record Bench Press - 182.5 kg (75kg Category)"
+        "World Powerlifting Champion (2023): Secured the Gold Medal in the 75 kg Open Class.",
+        "World Cup Best Lifter (2023, Kyrgyzstan): Recognized for her outstanding performance and dominance in international competition.",
+        "Strong Woman of India: Honored for her exceptional achievements and contributions to the sport.",
+        "First Female International Referee: Made history as the first woman to officiate at international powerlifting events, breaking barriers and setting new standards."
       ],
     },
     {
       id: 2,
-      name: "Deepika Rao",
-      role: "Women's Powerlifting Champion",
-      image: "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      quote: "I started as a beginner at a local gym. Today, I proudly represent Telangana in national events thanks to WPC’s support and guidance.",
+      name: "HA Pradeep kumar",
+      role: "National Referee",
+      image: inspireimg2,
+      quote: "Empowering athletes through strength, strategy, and service.",
       achievements: [
-        "National Silver Medalist - WPC India 2024",
-        "Women’s Empowerment Award - Telangana Sports 2023",
-        "Coach for 20+ Female Powerlifters"
+        "International Powerlifter and Medalist at the 2010 Asian Powerlifting Championship in Mongolia.",
+        "State-level Boxer and Athlete with a strong background in competitive sports.",
+        "NCC Republic Day Parade Representative (1983).",
+        "Recipient of the Karnataka Krista Rathna Award (2013) for his outstanding contributions to society."
+        
+
       ],
     },
     {
       id: 3,
-      name: "Imran Shaik",
-      role: "Youth Category Gold Medalist",
-      image: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      name: "Manthena Sai Teja",
+      role: "National Referee",
+      image: inspireimg3,
       quote: "WPC Telangana inspires every young athlete to stay consistent and confident. Hard work truly pays off here.",
       achievements: [
-        "Gold - Telangana State Youth Powerlifting 2024",
-        "Young Achiever Award - Hyderabad Fitness Expo"
+        "State Referee, WPC Telangana: Plays a key role in maintaining competition standards and officiating events with integrity.",
+        "Certified Personal Trainer: Recognized for his expertise in fitness and strength coaching.",
+        "Olympic-Level Trainer (Clean and Jerk Specialist): Brings advanced technical training methods to powerlifting and strength development.",
+        
       ],
     },
-    {
-      id: 4,
-      name: "Sneha Reddy",
-      role: "Coach & Mentor",
-      image: "https://images.unsplash.com/photo-1595152772835-219674b2a8a7?auto=format&fit=crop&w=800&q=80",
-      quote: "The goal is not just lifting weights, but lifting others with your story. WPC Telangana builds a strong, supportive community.",
-      achievements: [
-        "Certified WPC India Coach",
-        "Mentored 3 National Medalists",
-        "Head Coach - Hyderabad Strength Academy"
-      ],
-    },
-    {
-      id: 5,
-      name: "Deepa Kumar",
-      role: "Senior Powerlifting Trainer",
-      image: "https://images.unsplash.com/photo-1603415526960-f4e3b39f0e6b?auto=format&fit=crop&w=800&q=80",
-      quote: "Guiding young athletes under WPC Telangana has been an inspiring journey. Strength comes from unity and purpose.",
-      achievements: [
-        "Trainer of multiple state champions",
-        "Organized Powerlifting workshops"
-      ],
-    },
-    {
-      id: 6,
-      name: "Vikram Singh",
-      role: "State Powerlifting Champion",
-      image: "https://images.unsplash.com/photo-1621939405796-72d5de3b0466?auto=format&fit=crop&w=800&q=80",
-      quote: "Joining WPC Telangana helped me transform my training and mindset. Now, I compete with confidence at state and national levels.",
-      achievements: [
-        "Gold Medal - Telangana State Powerlifting 2024",
-        "Best Lifter Award - Hyderabad Open 2023"
-      ],
-    },
-    {
-      id: 7,
-      name: "Anjali Mehra",
-      role: "Women’s Fitness Ambassador",
-      image: "https://images.unsplash.com/photo-1584438783969-0c9dbb8c1c5b?auto=format&fit=crop&w=800&q=80",
-      quote: "Being part of WPC Telangana motivates women to take strength training seriously and empowers them to achieve their fitness goals.",
-      achievements: [
-        "Women’s Champion - Telangana Fitness Challenge 2023",
-        "Ambassador for Women Powerlifting Programs"
-      ],
-    },
-    {
-      id: 8,
-      name: "Raghav Varma",
-      role: "Junior Gold Medalist",
-      image: "https://images.unsplash.com/photo-1599058917211-49700926e3fa?auto=format&fit=crop&w=800&q=80",
-      quote: "I learned that patience and perseverance are key. WPC Telangana coaches pushed me to my best and prepared me for national competitions.",
-      achievements: [
-        "Gold Medal - Telangana Junior Nationals 2024",
-        "Best Junior Athlete Award 2023"
-      ],
-    },
-    {
-      id: 9,
-      name: "Priya Nair",
-      role: "Athlete & Motivational Speaker",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
-      quote: "Sharing my journey at WPC Telangana inspires upcoming athletes to believe in themselves and chase their dreams without fear.",
-      achievements: [
-        "Speaker at Telangana Fitness Summit 2024",
-        "Mentored 50+ young athletes"
-      ],
-    },
-    {
-      id: 10,
-      name: "Suresh Reddy",
-      role: "Powerlifting Mentor & Trainer",
-      image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
-      quote: "Mentoring young lifters and watching their progress is the most rewarding part of being with WPC Telangana. Strength is cultivated here with care.",
-      achievements: [
-        "Trainer of 5 National Medalists",
-        "Certified WPC Strength Coach"
-      ],
-    },
-    {
-      id: 11,
-      name: "Kavya Sharma",
-      role: "Regional Powerlifting Champion",
-      image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80",
-      quote: "Training with WPC Telangana strengthened both my body and mind. Achieving medals is just part of my journey here.",
-      achievements: [
-        "Gold Medal - Regional Championship 2023",
-        "Best Female Lifter Award"
-      ],
-    },
-    {
-      id: 12,
-      name: "Arjun Reddy",
-      role: "National Bench Press Record Holder",
-      image: "https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=800&q=80",
-      quote: "I broke my limits thanks to the guidance and encouragement from WPC Telangana. Strength comes from persistence and dedication.",
-      achievements: [
-        "National Bench Press Record 2024",
-        "Gold Medal - Telangana Open 2023"
-      ],
-    },
+   
   ];
 
   const athlete = stories.find((story) => story.id === parseInt(id));
@@ -176,8 +85,8 @@ const InspireDetails = () => {
           {!athlete ? (
             <div className="text-center my-5">
               <h3>Story not found</h3>
-              <Link to="/inspire" className="thm-btn">
-                Back to Inspire Page
+              <Link to="/referees" className="thm-btn">
+                Back to Referees Page
               </Link>
             </div>
           ) : (
@@ -199,8 +108,8 @@ const InspireDetails = () => {
                     <li key={index}>🏅 {ach}</li>
                   ))}
                 </ul>
-                <Link to="/inspire" className="thm-btn mt-4">
-                  ← Back to Inspire Stories
+                <Link to="/referees" className="thm-btn mt-4">
+                  ← Back to Referees Page
                 </Link>
               </div>
             </div>

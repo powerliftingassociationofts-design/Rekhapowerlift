@@ -1,139 +1,137 @@
 import React, { useState } from "react";
+import InteractiveBook from '../../../components/InteractiveBook/InteractiveBook';
+import S3Image from '../../../components/Common/S3Image';
 
-import { Document, Page, pdfjs } from 'react-pdf';
-
-
-import inspireimg1 from '../../../assets/images/Inspire/img1.jpg';
-import inspireimg2 from '../../../assets/images/Inspire/img2.jpg';
-import inspireimg3 from '../../../assets/images/Inspire/img3.jpeg';
-import inspireimg4 from '../../../assets/images/Inspire/img4.jpeg';
-import inspireimg5 from '../../../assets/images/Inspire/img5.jpeg';
-
-// PDF file variables set to empty string or placeholder. Add actual URLs when available.
-const rajeshKumarPDF = '';
-const deepikaRaoPDF = '';
-const imranShaikPDF = '';
-const snehaReddyPDF = '';
-const deepaKumarPDF = '';
-const vikramSinghPDF = '';
-const anjaliMehraPDF = '';
-const raghavVarmaPDF = '';
-
-// Set up PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL}/pdf.worker.min.mjs`;
+// S3 Keys for images - all images now served from AWS S3
+const s3Keys = {
+  inspireimg1: 'images/Inspire/Inspireimg1.jpg',
+  inspireimg2: 'images/Inspire/Inspireimg2.jpg',
+  inspireimg3: 'images/Inspire/Inspireimg3.jpg',
+  inspireimg4: 'images/Inspire/Inspireimg4.jpg',
+  inspireimg5: 'images/Inspire/Inspireimg5.jpg',
+  inspireimg6: 'images/Inspire/Inspireimg6.jpg',
+  inspireimg7: 'images/Inspire/Inspireimg7.jpg',
+  inspireimg8: 'images/Inspire/Inspireimg8.jpg',
+  inspireimg9: 'images/Inspire/Inspireimg9.jpg'
+};
 
 const SuccessStoriesMain = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedStory, setSelectedStory] = useState(null);
-  const [showPDFViewer, setShowPDFViewer] = useState(false);
-  const [numPages, setNumPages] = useState(null);
+  const [showInteractiveBook, setShowInteractiveBook] = useState(false);
 
 
   const successStories = [
     {
       id: 1,
-      name: "Rajesh Kumar",
+      name: "Surineni Diza",
       role: "National Powerlifter",
       category: "national",
-      image: inspireimg1,
+      image: s3Keys.inspireimg1,
       achievement: "National Champion 2023",
       story: "Started his journey as a novice lifter in 2018. Through dedication and proper training under WPC Telangana, he achieved his dream of becoming a national champion. His deadlift record of 280kg stands as an inspiration for upcoming lifters.",
       quote: "WPC Telangana gave me the platform to prove my strength at the national level. The journey taught me that with proper guidance and unwavering determination, any goal is achievable.",
       medals: ["Gold - National Championship 2023", "Silver - State Championship 2022", "Bronze - Regional Championship 2021"],
-      personalBest: { squat: "250kg", bench: "180kg", deadlift: "280kg" },
-      pdfPath: rajeshKumarPDF
+      personalBest: { squat: "250kg", bench: "180kg", deadlift: "280kg" }
     },
     {
       id: 2,
-      name: "Deepika Rao",
+      name: "Aashritha",
       role: "Women's Powerlifting Champion",
       category: "women",
-      image: inspireimg2,
+      image: s3Keys.inspireimg2,
       achievement: "Women's State Record Holder",
       story: "Deepika broke barriers in women's powerlifting by becoming the first woman from Telangana to lift 200kg in deadlift. Her journey from a fitness enthusiast to a record holder is truly inspiring.",
       quote: "I started as a beginner at a local gym. Today, I proudly represent Telangana in national events thanks to WPC's support and guidance.",
       medals: ["Gold - Women's Championship 2023", "State Record - Deadlift 200kg", "Gold - Regional Women's Meet 2022"],
-      personalBest: { squat: "150kg", bench: "100kg", deadlift: "200kg" },
-      pdfPath: deepikaRaoPDF
+      personalBest: { squat: "150kg", bench: "100kg", deadlift: "200kg" }
     },
     {
       id: 3,
-      name: "Imran Shaik",
+      name: "Tapasya",
       role: "Youth Category Gold Medalist",
       category: "youth",
-      image: inspireimg3,
+      image: s3Keys.inspireimg3,
       achievement: "Youth National Champion",
       story: "At just 19 years old, Imran became the youngest powerlifter from Telangana to win a national championship. His discipline and training regimen serve as an example for young athletes.",
       quote: "WPC Telangana inspires every young athlete to stay consistent and confident. Hard work truly pays off here.",
       medals: ["Gold - Youth National Championship 2023", "Gold - Junior State Championship 2022"],
-      personalBest: { squat: "200kg", bench: "140kg", deadlift: "240kg" },
-      pdfPath: imranShaikPDF
+      personalBest: { squat: "200kg", bench: "140kg", deadlift: "240kg" }
     },
     {
       id: 4,
-      name: "Sneha Reddy",
+      name: "Deeti Manoj Kumar",
       role: "Coach & Mentor",
       category: "coach",
-      image: inspireimg4,
+      image: s3Keys.inspireimg4,
       achievement: "Best Coach Award 2023",
       story: "Sneha transitioned from being a competitive lifter to one of the most respected coaches in WPC Telangana. She has trained over 50 athletes, with 15 of them achieving state-level recognition.",
       quote: "The goal is not just lifting weights, but lifting others with your story. WPC Telangana builds a strong, supportive community.",
       achievements: ["Best Coach Award 2023", "Trained 15 State Champions", "10+ Years Coaching Experience"],
-      specialization: "Youth Development & Women's Training",
-      pdfPath: snehaReddyPDF
+      specialization: "Youth Development & Women's Training"
     },
     {
       id: 5,
-      name: "Deepa Kumar",
+      name: "Karan",
       role: "Senior Powerlifting Trainer",
       category: "coach",
-      image: inspireimg5,
+      image: s3Keys.inspireimg5,
       achievement: "Lifetime Achievement Award",
       story: "With over 15 years of experience in powerlifting, Deepa has been instrumental in developing the powerlifting culture in Telangana. Her training methods have produced numerous champions.",
       quote: "Guiding young athletes under WPC Telangana has been an inspiring journey. Strength comes from unity and purpose.",
       achievements: ["Lifetime Achievement Award", "20+ State Champions Trained", "15+ Years Experience"],
-      specialization: "Technical Training & Competition Preparation",
-      pdfPath: deepaKumarPDF
+      specialization: "Technical Training & Competition Preparation"
     },
     {
       id: 6,
-      name: "Vikram Singh",
+      name: "Pranay",
       role: "State Powerlifting Champion",
       category: "state",
-      image: "https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=900&q=80",
+      image: s3Keys.inspireimg6,
       achievement: "Three-time State Champion",
       story: "Vikram's consistency in state championships is unmatched. He has won the state championship three consecutive times and is preparing for international competitions.",
       quote: "Joining WPC Telangana helped me transform my training and mindset. Now, I compete with confidence at state and national levels.",
       medals: ["Gold - State Championship 2023", "Gold - State Championship 2022", "Gold - State Championship 2021"],
-      personalBest: { squat: "230kg", bench: "160kg", deadlift: "270kg" },
-      pdfPath: vikramSinghPDF
+      personalBest: { squat: "230kg", bench: "160kg", deadlift: "270kg" }
     },
     {
       id: 7,
-      name: "Anjali Mehra",
+      name: "Rishikesh Reddy",
       role: "Women's Fitness Ambassador",
       category: "women",
-      image: "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=900&q=80",
+      image: s3Keys.inspireimg7,
       achievement: "Women's Empowerment Award",
       story: "Anjali has been actively promoting women's participation in powerlifting. Through her workshops and seminars, she has encouraged over 200 women to take up strength training.",
       quote: "Being part of WPC Telangana motivates women to take strength training seriously and empowers them to achieve their fitness goals.",
       impact: ["200+ Women Trained", "15 Workshops Conducted", "Women's Empowerment Award 2023"],
-      personalBest: { squat: "140kg", bench: "90kg", deadlift: "180kg" },
-      pdfPath: anjaliMehraPDF
+      personalBest: { squat: "140kg", bench: "90kg", deadlift: "180kg" }
     },
     {
       id: 8,
-      name: "Raghav Varma",
+      name: "sai Teja Manthena",
       role: "Junior Gold Medalist",
       category: "youth",
-      image: "https://images.unsplash.com/photo-1558611848-73f7eb4001a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: s3Keys.inspireimg8,
       achievement: "Junior National Record Holder",
       story: "Raghav set a new junior national record in bench press with a lift of 150kg at just 17 years old. His technique and dedication are exemplary for young lifters.",
       quote: "I learned that patience and perseverance are key. WPC Telangana coaches pushed me to my best and prepared me for national competitions.",
       medals: ["Junior National Record - Bench Press 150kg", "Gold - Junior Championship 2023"],
-      personalBest: { squat: "180kg", bench: "150kg", deadlift: "220kg" },
-      pdfPath: raghavVarmaPDF
+      personalBest: { squat: "180kg", bench: "150kg", deadlift: "220kg" }
+    },
+    {
+      id: 9,
+      name: "Thirupathi Rao",
+      role: "Junior Gold Medalist",
+      category: "youth",
+      image: s3Keys.inspireimg9,
+      achievement: "Junior National Record Holder",
+      story: "Raghav set a new junior national record in bench press with a lift of 150kg at just 17 years old. His technique and dedication are exemplary for young lifters.",
+      quote: "I learned that patience and perseverance are key. WPC Telangana coaches pushed me to my best and prepared me for national competitions.",
+      medals: ["Junior National Record - Bench Press 150kg", "Gold - Junior Championship 2023"],
+      personalBest: { squat: "180kg", bench: "150kg", deadlift: "220kg" }
     }
+    
+
   ];
 
   const categories = [
@@ -151,28 +149,21 @@ const SuccessStoriesMain = () => {
 
 
 
-  // PDF Viewer Functions
-  const openPDFViewer = (storyOrId) => {
+  // Interactive Book Functions
+  const openInteractiveBook = (storyOrId) => {
     let story = storyOrId;
     if (typeof storyOrId === 'number') {
       story = successStories.find(s => s.id === storyOrId);
     }
     if (story) {
       setSelectedStory(story);
-      setShowPDFViewer(true);
-      
+      setShowInteractiveBook(true);
     }
   };
 
-  const closePDFViewer = () => {
-    setShowPDFViewer(false);
+  const closeInteractiveBook = () => {
+    setShowInteractiveBook(false);
     setSelectedStory(null);
-  
-    setNumPages(null);
-  };
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
   };
 
 
@@ -213,11 +204,15 @@ const SuccessStoriesMain = () => {
            
             {filteredStories.map((story) => (
               <div key={story.id} className="col-xl-4 col-lg-6 col-md-6 mb-4">
-                <div className="story-book-card" onClick={() => openPDFViewer(story.id)}>
+                <div className="story-book-card" onClick={() => openInteractiveBook(story.id)}>
                   <div className="book-spine"></div>
                   <div className="book-cover">
                     <div className="cover-image">
-                      <img src={story.image} alt={story.name} />
+                      <S3Image 
+                        s3Key={story.image} 
+                        alt={story.name}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
                       <div className="cover-overlay">
                         <div className="book-title">{story.name}</div>
                         <div className="book-subtitle">{story.role}</div>
@@ -238,47 +233,12 @@ const SuccessStoriesMain = () => {
 
 
 
-      {/* PDF Viewer Modal */}
-      {showPDFViewer && selectedStory && (
-        <div className="pdf-viewer-overlay" onClick={closePDFViewer}>
-          <div className="pdf-viewer-container" onClick={(e) => e.stopPropagation()}>
-            <div className="pdf-viewer-header">
-              <h2>{selectedStory.name} - Success Story</h2>
-              <button className="close-pdf-btn" onClick={closePDFViewer}>
-                ✕
-              </button>
-            </div>
-            
-            <div className="pdf-viewer-content" style={{overflowY: 'auto', maxHeight: '70vh'}}>
-              <Document
-                file={selectedStory.pdfPath}
-                onLoadSuccess={onDocumentLoadSuccess}
-                loading={
-                  <div className="pdf-loading">
-                    <div className="loading-spinner"></div>
-                    <p>Loading PDF...</p>
-                  </div>
-                }
-                error={
-                  <div className="pdf-error">
-                    <p>Failed to load PDF. Please try downloading instead.</p>
-                  </div>
-                }
-              >
-                {Array.from(new Array(numPages), (el, index) => (
-                  <Page
-                    key={`page_${index + 1}`}
-                    pageNumber={index + 1}
-                    width={Math.min(800, window.innerWidth * 0.8)}
-                    renderTextLayer={false}
-                    renderAnnotationLayer={false}
-                    style={{ marginBottom: 24 }}
-                  />
-                ))}
-              </Document>
-            </div>
-          </div>
-        </div>
+      {/* Interactive Book Modal */}
+      {showInteractiveBook && selectedStory && (
+        <InteractiveBook 
+          story={selectedStory}
+          onClose={closeInteractiveBook}
+        />
       )}
 
       <style>{`
@@ -296,7 +256,7 @@ const SuccessStoriesMain = () => {
         .filter-btn {
           padding: 12px 24px;
           background: rgba(255, 255, 255, 0.1);
-          color: #fff;
+          color: #ff1493;
           border: 2px solid #ff1493;
           border-radius: 25px;
           cursor: pointer;
@@ -360,6 +320,23 @@ const SuccessStoriesMain = () => {
           object-fit: cover;
         }
 
+        .cover-image img[src=""],
+        .cover-image img:not([src]),
+        .cover-image img[src*="undefined"] {
+          display: none;
+        }
+
+        .cover-image img[src=""]::before,
+        .cover-image img:not([src])::before,
+        .cover-image img[src*="undefined"]::before {
+          content: "Image Loading...";
+          display: block;
+          background: #f0f0f0;
+          color: #666;
+          text-align: center;
+          padding: 50px;
+        }
+
         .cover-overlay {
           position: absolute;
           bottom: 0;
@@ -374,13 +351,13 @@ const SuccessStoriesMain = () => {
         .book-title {
           font-size: 18px;
           font-weight: bold;
-          color: #ff1493;
+          color: #f2f5f4 !important;
           margin-bottom: 8px;
         }
 
         .book-subtitle {
           font-size: 14px;
-          color: #46e8d0;
+          color: #f2f5f4 !important;
           margin-bottom: 15px;
         }
 

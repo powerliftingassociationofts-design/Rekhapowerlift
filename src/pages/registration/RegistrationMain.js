@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-// Import PDFs from src/assets/pdfs for proper bundling
-
 
 
 const RegistrationMain = () => {
@@ -13,13 +11,13 @@ const RegistrationMain = () => {
             value: 'wpc-registration-form.pdf',
             label: 'WPC Registration Form',
             description: 'Official registration form for WPC Telangana competitions',
-            file: '' // Add '/assets/pdfs/wpc-registration-form.pdf' when available
+            file: '/assets/pdfs/Application_.pdf',
         },
         {
-            value: 'wpc-powerlifting-rules.pdf',
+            value: 'wpc-powerlifting-Id card.pdf',
             label: 'WPC ID Card Form',
             description: 'Complete rules and regulations for WPC powerlifting competitions',
-            file: '' // Add '/assets/pdfs/wpc-powerlifting-rules.pdf' when available
+            file: '/assets/pdfs/ID card_.pdf',
         }
         // Add more documents as needed
     ];
@@ -27,13 +25,32 @@ const RegistrationMain = () => {
     const handleDownload = () => {
         if (selectedDocument) {
             const selectedDoc = documents.find(doc => doc.value === selectedDocument);
-            if (selectedDoc) {
-                const link = document.createElement('a');
-                link.href = selectedDoc.file;
-                link.download = selectedDocument;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
+            if (selectedDoc && selectedDoc.file) {
+                try {
+                    console.log('Attempting to download:', selectedDoc.file);
+                    
+                    // Create download link
+                    const link = document.createElement('a');
+                    link.href = selectedDoc.file;
+                    link.download = selectedDocument;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    
+                    // Add to DOM, click, then remove
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    console.log('Download initiated successfully');
+                } catch (error) {
+                    console.error('Download failed:', error);
+                    // Fallback: open in new tab
+                    alert('Direct download failed. Opening PDF in new tab...');
+                    window.open(selectedDoc.file, '_blank');
+                }
+            } else {
+                console.error('Document file not found:', selectedDoc);
+                alert('Document file not found. Please try again.');
             }
         } else {
             alert('Please select a document to download');

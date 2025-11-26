@@ -1,31 +1,11 @@
 "use client";
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from "react";
-import MobileLogo from '../../..//assets/images/plat2.png'
+import MobileLogo from '../../../assets/images/plat2.png'
 
 const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
-  const [isActive, setIsActive] = useState({
-    status: false,
-    key: "",
-    subMenuKey: "",
-  });
-
-  const handleToggle = (key, subMenuKey = "") => {
-    if (isActive.key === key && isActive.subMenuKey === subMenuKey) {
-      setIsActive({
-        status: false,
-        key: "",
-        subMenuKey: "",
-      });
-    } else {
-      setIsActive({
-        status: true,
-        key,
-        subMenuKey,
-      });
-    }
-  };
+  // Remove unused state and functions for now to fix errors
+  // Can be added back when needed for submenu functionality
   return (
     <>
       {/*End Mobile Menu */}
@@ -33,12 +13,21 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
         <div
           className="mobile-nav__overlay mobile-nav__toggler"
           onClick={handleMobileMenu}
+          role="button"
+          aria-label="Close mobile menu overlay"
         />
         {/* /.mobile-nav__overlay */}
         <div className="mobile-nav__content">
           <span
             className="mobile-nav__close mobile-nav__toggler"
             onClick={handleMobileMenu}
+            role="button"
+            aria-label="Close mobile menu"
+            style={{
+              cursor: 'pointer',
+              zIndex: 10001,
+              touchAction: 'manipulation'
+            }}
           >
             <i className="fa fa-times" />
           </span>
@@ -49,188 +38,118 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
           </div>
           {/* /.logo-box */}
           <div className="mobile-nav__container">
-          <ul className="main-menu__list">
-  <li>
-    <Link to="/" onClick={handleMobileMenu}>
-      Home
-    </Link>
-  </li>
-
-  <li className={isActive.key === 2 ? "dropdown current" : "dropdown"}>
-    <Link to="#" onClick={handleMobileMenu}>
-      Pages
-    </Link>
-    <ul style={{ display: `${isActive.key === 2 ? "block" : "none"}` }}>
-      <li>
-        <Link to="/about" onClick={handleMobileMenu}>
-          About WPC–Telangana
-        </Link>
-      </li>
-      <li>
-        <Link to="/team" onClick={handleMobileMenu}>
-          Committee Members
-        </Link>
-      </li>
-      <li>
-        <Link to="/team-details" onClick={handleMobileMenu}>
-          Referees
-        </Link>
-      </li>
-      <li>
-        <Link to="/testimonials" onClick={handleMobileMenu}>
-          Testimonials
-        </Link>
-      </li>
-      <li>
-        <Link to="/pricing" onClick={handleMobileMenu}>
-          Results
-        </Link>
-      </li>
-      <li>
-        <Link to="/gallery" onClick={handleMobileMenu}>
-          Gallery
-        </Link>
-      </li>
-      <li>
-        <Link to="/gallery-details" onClick={handleMobileMenu}>
-          Gallery Details
-        </Link>
-      </li>
-      <li>
-        <Link to="/faq" onClick={handleMobileMenu}>
-          FAQ
-        </Link>
-      </li>
-      <li>
-        <Link to="/404" onClick={handleMobileMenu}>
-          404 Error
-        </Link>
-      </li>
-    </ul>
-    <div
-      className={isActive.key === 2 ? "dropdown-btn open" : "dropdown-btn"}
-      onClick={() => handleToggle(2)}
-    >
-      <span className="fa fa-angle-right" />
-    </div>
-  </li>
-
-  <li className={isActive.key === 3 ? "dropdown current" : "dropdown"}>
-    <Link to="#" onClick={handleMobileMenu}>
-      Championships
-    </Link>
-    <ul style={{ display: `${isActive.key === 3 ? "block" : "none"}` }}>
-      <li>
-        <Link to="/services" onClick={handleMobileMenu}>
-          District Championships
-        </Link>
-      </li>
-      <li>
-        <Link to="/event-prodigy" onClick={handleMobileMenu}>
-          State Championships
-        </Link>
-      </li>
-      <li>
-        <Link to="/stellar-events-co" onClick={handleMobileMenu}>
-          Open Meets
-        </Link>
-      </li>
-      <li>
-        <Link to="/elite-event-management" onClick={handleMobileMenu}>
-          Benchpress Events
-        </Link>
-      </li>
-      <li>
-        <Link to="/infinite-occasions" onClick={handleMobileMenu}>
-          Deadlift Events
-        </Link>
-      </li>
-      <li>
-        <Link to="/dream-event-planners" onClick={handleMobileMenu}>
-          Powerlifting Events
-        </Link>
-      </li>
-    </ul>
-    <div
-      className={isActive.key === 3 ? "dropdown-btn open" : "dropdown-btn"}
-      onClick={() => handleToggle(3)}
-    >
-      <span className="fa fa-angle-right" />
-    </div>
-  </li>
-
-  <li className={isActive.key === 4 ? "dropdown current" : "dropdown"}>
-    <Link to="#" onClick={handleMobileMenu}>
-      Membership
-    </Link>
-    <ul style={{ display: `${isActive.key === 4 ? "block" : "none"}` }}>
-      <li>
-        <Link to="/event" onClick={handleMobileMenu}>
-          How to Join
-        </Link>
-      </li>
-      <li>
-        <Link to="/event-details" onClick={handleMobileMenu}>
-          Benefits & Rules
-        </Link>
-      </li>
-    </ul>
-    <div
-      className={isActive.key === 4 ? "dropdown-btn open" : "dropdown-btn"}
-      onClick={() => handleToggle(4)}
-    >
-      <span className="fa fa-angle-right" />
-    </div>
-  </li>
-
-  <li className={isActive.key === 5 ? "dropdown current" : "dropdown"}>
-    <Link to="#" onClick={handleMobileMenu}>
-      News & Updates
-    </Link>
-    <ul style={{ display: `${isActive.key === 5 ? "block" : "none"}` }}>
-      <li>
-        <Link to="/blog" onClick={handleMobileMenu}>
-          Latest News
-        </Link>
-      </li>
-      <li>
-        <Link to="/blog-list" onClick={handleMobileMenu}>
-          All Updates
-        </Link>
-      </li>
-      <li>
-        <Link to="/blog-details" onClick={handleMobileMenu}>
-          News Details
-        </Link>
-      </li>
-    </ul>
-    <div
-      className={isActive.key === 5 ? "dropdown-btn open" : "dropdown-btn"}
-      onClick={() => handleToggle(5)}
-    >
-      <span className="fa fa-angle-right" />
-    </div>
-  </li>
-
-  <li>
-    <Link to="/contact" onClick={handleMobileMenu}>
-      Contact
-    </Link>
-  </li>
-</ul>
+           <ul className="main-menu__list">
+                 <li>
+                   <Link to="/">
+                     Home
+                   </Link>
+                 </li>
+           
+                 <li className="dropdown">
+                   <Link to="/about">
+                     About
+                   </Link>
+                   <ul className="sub-menu">
+                     <li>
+                       <Link to="/team">
+                         Committee Members
+                       </Link>
+                     </li>
+                     <li>
+                       <Link to="/referees">
+                         Referees
+                       </Link>
+                     </li>
+                     <li>
+                       <Link to="/colloboration">
+                         Partnerships
+                       </Link>
+                     </li>
+                   </ul>
+                 </li>
+           
+                 {/* <li className={parentMenu === 'Events' ? 'dropdown current-menu-item' : 'dropdown'}>
+                   <Link to="/event" className={activeMenu === '/event' ? 'active-menu' : ''}>
+                     Events
+                   </Link>
+                   <ul className="sub-menu">
+                     <li>
+                       <Link to="/event" className={activeMenu === '/event' ? 'active-menu' : ''}>
+                         All Events
+                       </Link>
+                       <ul className="sub-menu">
+                         <li>
+                           <Link to="/event-details/year-1">State Championship</Link>
+                         </li>
+                         <li>
+                           <Link to="/event-details/year-3">Gym Point Championship</Link>
+                         </li>
+                         <li>
+                           <Link to="/event-details/year-4">Origin Championship</Link>
+                         </li>
+                         <li>
+                           <Link to="/event-details/year-5">Ozzie Championship</Link>
+                         </li>
+                         <li>
+                           <Link to="/event-details/year-6">Potens Championship</Link>
+                         </li>
+                         <li>
+                           <Link to="/event-details/year-7">Second State Championship</Link>
+                         </li>
+                         <li>
+                           <Link to="/event-details/year-8">Telangana First State Championship</Link>
+                         </li>
+                         <li>
+                           <Link to="/event-details/year-9">FSG Independence Day</Link>
+                         </li>
+                         <li>
+                           <Link to="/event-details/year-10">AF Championship</Link>
+                         </li>
+                       </ul>
+                     </li>
+                   </ul>
+                 </li> */}
+                 <li>
+                   <Link to="/gallery">
+                     Blogs
+                   </Link>
+                 </li>
+                 <li>
+                   <Link to="/results">
+                     Results
+                   </Link>
+                   <ul className="sub-menu">
+                     
+                     {/* <li>
+                       <Link to="/gallery">
+                         Photo Gallery
+                       </Link>
+                     </li> */}
+                   </ul>
+                 </li>
+           
+                 <li>
+                   <Link to="/inspire/success-stories">
+                     Inkspire
+                   </Link>
+                  
+                 </li>
+           
+                 <li>
+                   <Link to="/registration">
+                     Register
+                   </Link>
+                 </li>
+           
+                 <li>
+                   <Link to="/contact">
+                     Contact
+                   </Link>
+                 </li>
+               </ul>
           </div>
-          <ul className="mobile-nav__contact list-unstyled">
-            <li>
-              <i className="fa fa-envelope" />
-              <a href="mailto:info@wpctelangana.in">
-                info@wpctelangana.in
-              </a>
-            </li>
-            <li>
-              <i className="fa fa-phone-alt" />
-              <a href="tel:+91XXXXXXXXXXX">+91 7330778111</a>
-            </li>
-          </ul>
+          {/* /.mobile-nav__container */}
+          
           {/* /.mobile-nav__contact */}
           <div className="mobile-nav__top">
             <div className="mobile-nav__social">

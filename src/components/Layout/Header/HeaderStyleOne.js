@@ -110,7 +110,7 @@ const HeaderStyleOne = (props) => {
                                 <div className="main-menu__right">
                                
                                 {/* <div className="main-menu__btn-box">
-                                    <Link to="/contact" className="main-menu__btn thm-btn">
+                                    <Link [to=]"/contact" className="main-menu__btn thm-btn">
                                         Join WPC <span className="icon-arrow-right"></span>
                                     </Link>
                                 </div> */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Banner from "./Banner"
+import Banner from "./Banner.js"
 import ServicesOne from './ServicesOne';
 import SlidingText from './SlidingText';
 import EventOne from './EventOne';

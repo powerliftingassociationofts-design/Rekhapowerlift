@@ -2,11 +2,11 @@
 import React from 'react';
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
-import brandImg1 from '../../assets/images/brand/brand-2-1.png';
-import brandImg2 from '../../assets/images/brand/brand-2-2.png';
-import brandImg3 from '../../assets/images/brand/brand-2-3.png';
-import brandImg4 from '../../assets/images/brand/brand-2-4.png';
-import brandImg5 from '../../assets/images/brand/brand-2-5.png';
+import brandImg1 from '../../assets/images/brand/brand-1-1.jpg';
+import brandImg2 from '../../assets/images/brand/brand-1-2.jpg';
+import brandImg3 from '../../assets/images/brand/brand-1-3.jpg';
+import brandImg4 from '../../assets/images/brand/brand-1-4.jpg';
+import brandImg5 from '../../assets/images/brand/brand-1-5.jpg';
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],

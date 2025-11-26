@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import inspireimg1 from '../../assets/images/Inspire/img1.jpg';
-import inspireimg2 from '../../assets/images/Inspire/img2.jpg';
-import inspireimg3 from '../../assets/images/Inspire/img3.jpeg';
-import inspireimg4 from '../../assets/images/Inspire/img4.jpeg';
-import inspireimg5 from '../../assets/images/Inspire/img5.jpeg';
+import inspireimg1 from '../../assets/images/team/Adobe Express - file.jpg';
+import inspireimg2 from '../../assets/images/team/team-1-3.jpg';
+import inspireimg3 from '../../assets/images/team/Adobe Express - file (1).jpg';
 
 
 
@@ -15,36 +13,29 @@ const InspireMain = () => {
   const stories = [
     {
       id: 1,
-      name: "Rajesh Kumar",
-      role: "National Powerlifter",
+      name: "Inturi Rekha",
+      role: "International Referee",
       image: inspireimg1,
       quote:
-        "Powerlifting taught me discipline and resilience. WPC Telangana gave me the platform to prove my strength at the national level.",
+        "PRESIDENT, WPC TELANGANA & FIRST FEMALE INTERNATIONAL REFEREE.",
     },
     {
       id: 2,
-      name: "Deepika Rao",
-      role: "Women's Powerlifting Champion",
+      name: "HA Pradeep kumar",
+      role: "National Referee",
       image: inspireimg2,
       quote:
-        "I started as a beginner at a local gym. Today, I proudly represent Telangana in national events thanks to WPC’s support and guidance.",
+        " Vice President  of WPC Telangana, where he plays a key role in guiding strategy.",
     },
     {
       id: 3,
-      name: "Imran Shaik",
-      role: "Youth Category Gold Medalist",
+      name: "Manthena Sai Teja",
+      role: "National Referee",
       image: inspireimg3,
       quote:
-        "WPC Telangana inspires every young athlete to stay consistent and confident. Hard work truly pays off here.",
+        "National Referee of WPC Telangana, a certified personal trainer.",
     },
-    {
-      id: 4,
-      name: "Sneha Reddy",
-      role: "Coach & Mentor",
-      image: inspireimg4,
-      quote:
-        "The goal is not just lifting weights,but lifting others with your story. WPC Telangana builds a strong,supportive community.",
-    },
+    
     // {
     //   id: 5,
     //   name: "Deepa Kumar",
@@ -120,6 +111,7 @@ const InspireMain = () => {
 
   return (
     <section className="blog-page collaboration-page" style={{ background: "#ffffff" }}>
+     
       <div className="container">
         <div className="section-title text-center mb-5">
           <h2 className="section-title__title" style={{ color: "#000000" }}>
@@ -130,9 +122,9 @@ const InspireMain = () => {
           </p>
         </div>
 
-        <div className="row">
+        <div className="row justify-content-center">
           {stories.map((athlete, index) => (
-            <div key={athlete.id} className="col-xl-3 col-lg-4 col-md-6 mb-4">
+            <div key={athlete.id} className="col-xl-4 col-lg-4 col-md-6 mb-4">
               <div className={`inspire-card inspire-card-${index + 1}`}>
                 <div className="inspire-card__img">
                   <img src={athlete.image} alt={athlete.name} />
@@ -142,7 +134,6 @@ const InspireMain = () => {
                   <h3 className="inspire-card__name">{athlete.name}</h3>
                   <p className="inspire-card__role">{athlete.role}</p>
                   <p className="inspire-card__quote">{athlete.quote}</p>
-                  <p className="inspire-card__id">ID: {athlete.id}</p>
                   <Link to={`/inspire-details/${athlete.id}`} className="inspire-card__btn">
                     View Details
                   </Link>
@@ -155,12 +146,14 @@ const InspireMain = () => {
 
       <style>{`
         .inspire-card {
-          background: rgba(255, 255, 255, 0.95);
-          border-radius: 15px;
+          background: rgba(255, 255, 255, 0.98);
+          border-radius: 20px;
           overflow: hidden;
-          box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.15);
           transition: all 0.4s ease;
-          border: 1px solid rgba(0,0,0,0.1);
+          border: 1px solid rgba(0,0,0,0.08);
+          max-width: 400px;
+          margin: 0 auto;
         }
         
         /* Default hover effect */
@@ -199,18 +192,37 @@ const InspireMain = () => {
         
         .inspire-card__img {
           position: relative;
+          overflow: hidden;
+          border-radius: 20px 20px 0 0;
+          background: #f8f9fa;
         }
         .inspire-card__img img {
           width: 100%;
-          height: 260px;
+          height: 400px;
           object-fit: cover;
           display: block;
+          border-radius: 15px 15px 0 0;
+          transition: all 0.3s ease;
+          filter: brightness(1.1) contrast(1.1) saturate(1.2);
+          image-rendering: -webkit-optimize-contrast;
+          image-rendering: crisp-edges;
+        }
+        
+        .inspire-card:hover .inspire-card__img img {
+          filter: brightness(1.2) contrast(1.2) saturate(1.3);
+          transform: scale(1.02);
         }
         .inspire-card__overlay {
           position: absolute;
           top: 0; left: 0;
           width: 100%; height: 100%;
-          background: rgba(0,0,0,0.4);
+          background: rgba(0,0,0,0.2);
+          transition: all 0.3s ease;
+          border-radius: 15px 15px 0 0;
+        }
+        
+        .inspire-card:hover .inspire-card__overlay {
+          background: rgba(0,0,0,0.1);
         }
         .inspire-card__content {
           padding: 20px;

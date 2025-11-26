@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import inspireimg1 from '../../assets/images/Inspire/img1.jpg';
-import inspireimg2 from '../../assets/images/Inspire/img2.jpg';
-import inspireimg3 from '../../assets/images/Inspire/img3.jpeg';
-import inspireimg4 from '../../assets/images/Inspire/img4.jpeg';
-import inspireimg5 from '../../assets/images/Inspire/img5.jpeg';
+const inspireimg1 = `${process.env.PUBLIC_URL}/images/Inspire/img1.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const inspireimg2 = `${process.env.PUBLIC_URL}/images/Inspire/img2.jpg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const inspireimg3 = `${process.env.PUBLIC_URL}/images/Inspire/img3.jpeg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const inspireimg4 = `${process.env.PUBLIC_URL}/images/Inspire/img4.jpeg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
+const inspireimg5 = `${process.env.PUBLIC_URL}/images/Inspire/img5.jpeg`.replace("../assets/images", "images").replace("../../assets/images", "images").replace("../../../assets/images", "images");
 
 
 

@@ -1,24 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/autoplay'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import 'swiper/css/effect-fade'
 
-import BannerImg from "../../assets/images/resources/main-slider-1.jpg";
-import BannerImg2 from "../../assets/images/resources/main-slider-2.jpg";
-import BannerImg3 from "../../assets/images/resources/main-slider-3.jpg";
-import BannerShape1 from "../../assets/images/shapes/main-slider-shape-1.png";
-import BannerShape2 from "../../assets/images/shapes/main-slider-shape-2.png";
-import BannerShape3 from "../../assets/images/shapes/main-slider-star-1.png";
-import BannerShape4 from "../../assets/images/shapes/main-slider-star-2.png";
-import BannerShape5 from "../../assets/images/shapes/main-slider-star-3.png";
+// Images served from public folder - using process.env.PUBLIC_URL for compatibility
+const publicUrl = process.env.PUBLIC_URL || '';
+const BannerImg = `${publicUrl}/images/slider/hero1.jpg`;
+const BannerImg2 = `${publicUrl}/images/slider/hero2.jpg`;
+const BannerImg3 = `${publicUrl}/images/slider/hero3.jpg`;
+
+// Shape images from public folder
+const BannerShape1 = `${publicUrl}/images/shapes/main-slider-shape-1.png`;
+const BannerShape2 = `${publicUrl}/images/shapes/main-slider-shape-2.png`;
+const BannerShape3 = `${publicUrl}/images/shapes/main-slider-star-1.png`;
+const BannerShape4 = `${publicUrl}/images/shapes/main-slider-star-2.png`;
+const BannerShape5 = `${publicUrl}/images/shapes/main-slider-star-3.png`;
 
 
 const swiperOptions = {
-  modules: [Autoplay, Pagination, Navigation],
+  modules: [Autoplay, Pagination, Navigation, EffectFade],
   slidesPerView: 1,
   loop: true,
   effect: 'fade',
@@ -50,7 +55,7 @@ export default function Banner() {
           <div className="swiper-wrapper">
             <SwiperSlide className="swiper-slide">
               <div className="main-slider__img">
-                <img src={BannerImg} alt="" />
+                <img src={BannerImg} alt="WPC Telangana Banner" />
               </div>
               <div className="main-slider__shpae-1">
                 <img src={BannerShape1} alt="" />
@@ -114,7 +119,7 @@ export default function Banner() {
 
             <SwiperSlide className="swiper-slide">
               <div className="main-slider__img">
-                <img src={BannerImg2} alt="" />
+                <img src={BannerImg2} alt="Building Champions Banner" />
               </div>
               <div className="main-slider__shpae-1">
                 <img src={BannerShape1} alt="" />
@@ -179,7 +184,7 @@ export default function Banner() {
 
             <SwiperSlide className="swiper-slide">
               <div className="main-slider__img">
-                <img src={BannerImg3} alt="" />
+                <img src={BannerImg3} alt="International Competition Banner" />
               </div>
               <div className="main-slider__shpae-1">
                 <img src={BannerShape1} alt="" />

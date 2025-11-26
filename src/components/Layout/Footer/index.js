@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footershape from '../../../assets/images/shapes/site-footer-shape-1.png';
-import footerLogo from '../../../assets/images/plat2.png';
+const Footershape = `${process.env.PUBLIC_URL}/images/shapes/site-footer-shape-1.png`;
+const footerLogo = `${process.env.PUBLIC_URL}/images/plat2.png`;
 
 const Footer = () => {
 
@@ -24,12 +24,12 @@ const Footer = () => {
                                         <span className="logo-subtitle" style={{ color: 'blue' }}>WPC Telangana</span>
                                         </div>
                                     </Link>
-                    </div>
+                                    </div>
                     <div className="site-footer__social">
-                        <Link to="#"><i className="icon-facebook"></i></Link>
-                        <Link to="#"><i className="icon-fi"></i></Link>
-                        <Link to="#"><i className="icon-instagram"></i></Link>
-                        <Link to="#"><i className="icon-pinterest"></i></Link>
+                        <Link to="https://www.facebook.com/p/Telangana-State-Powerlifting-Association-100066545078243/"><i className="icon-facebook"></i></Link>
+                
+                        <Link to="https://www.instagram.com/wpc_telangana_powerlifting/"><i className="icon-instagram"></i></Link>
+                        
                     </div>
                 </div>
             </div>
@@ -127,7 +127,7 @@ const Footer = () => {
         <div className="site-footer__bottom">
             <div className="container">
                 <div className="site-footer__bottom-inner">
-                    <p className="site-footer__bottom-text">© WPC–Telangana 2025 | Official State Body of WPC–India | All Rights Reserved</p>
+                    <p className="site-footer__bottom-text">© Rekha WPC–Telangana 2025 | Powered by ˜ APTITPS</p>
                     <ul className="list-unstyled site-footer__bottom-menu">
                         <li><Link to="/about">Terms & Condition</Link></li>
                         <li><Link to="/about">Privacy Policy</Link></li>

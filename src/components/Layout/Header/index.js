@@ -13,12 +13,17 @@ const Header = (props) => {
     const [isPopup, setIsPopup] = useState(false);
     const [isSidebar, setIsSidebar] = useState(false);
 
-    const handleMobileMenu = () => {
+    const handleMobileMenu = (e) => {
+        e?.preventDefault();
+        e?.stopPropagation();
+        console.log('Mobile menu toggle clicked', !isMobileMenu);
         setMobileMenu(!isMobileMenu);
         if (!isMobileMenu) {
             document.body.classList.add("mobile-menu-visible");
+            document.documentElement.classList.add("mobile-menu-visible");
         } else {
             document.body.classList.remove("mobile-menu-visible");
+            document.documentElement.classList.remove("mobile-menu-visible");
         }
     }
     const handlePopup = () => {
@@ -56,7 +61,18 @@ const Header = (props) => {
 
                         </div>
                         <div className="main-menu__main-menu-box">
-                        <div className="mobile-nav__toggler" onClick={handleMobileMenu}>
+                        <div 
+                            className="mobile-nav__toggler" 
+                            onClick={handleMobileMenu}
+                            role="button"
+                            aria-label="Toggle mobile menu"
+                            style={{
+                                cursor: 'pointer',
+                                position: 'relative',
+                                zIndex: 10000,
+                                touchAction: 'manipulation'
+                            }}
+                        >
                             <i className="fa fa-bars" />
                         </div>
                         <ul className="main-menu__list">
@@ -96,7 +112,18 @@ const Header = (props) => {
                                 </div>
                                 </div>
                                 <div className="main-menu__main-menu-box">
-                                <div className="mobile-nav__toggler" onClick={handleMobileMenu}>
+                                <div 
+                                    className="mobile-nav__toggler" 
+                                    onClick={handleMobileMenu}
+                                    role="button"
+                                    aria-label="Toggle mobile menu"
+                                    style={{
+                                        cursor: 'pointer',
+                                        position: 'relative',
+                                        zIndex: 10000,
+                                        touchAction: 'manipulation'
+                                    }}
+                                >
                                     <i className="fa fa-bars" />
                                 </div>
                                 <ul className="main-menu__list">

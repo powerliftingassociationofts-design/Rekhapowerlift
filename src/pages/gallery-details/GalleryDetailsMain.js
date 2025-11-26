@@ -1,9 +1,7 @@
 "use client";
 import { Link } from 'react-router-dom'; // Use react-router-dom for routing.
-import GalleryDetailsImg1 from '../../assets/images/gallery/gallery-details-img-1.jpg'
-import GalleryDetailsImg2 from '../../assets/images/gallery/gallery-details-img-box-img-1.jpg'
-import GalleryDetailsImg3 from '../../assets/images/gallery/gallery-details-img-box-img-2.jpg'
-import GalleryDetailsImg4 from '../../assets/images/gallery/gallery-details-img-box-img-3.jpg'
+import React from 'react';
+
 export default function Home() {
   return (
 
@@ -14,7 +12,7 @@ export default function Home() {
                   <div className="col-xl-8 col-lg-7">
                     <div className="gallery-details__top-img">
                       <img
-                        src= {GalleryDetailsImg1}
+                        src= {''}
                         alt=""
                       />
                     </div>
@@ -139,7 +137,7 @@ export default function Home() {
                   <div className="col-xl-4 col-lg-4">
                     <div className="gallery-details__img-box-img">
                       <img
-                        src={GalleryDetailsImg2}
+                        src={''}
                         alt=""
                       />
                     </div>
@@ -147,7 +145,7 @@ export default function Home() {
                   <div className="col-xl-4 col-lg-4">
                     <div className="gallery-details__img-box-img">
                       <img
-                        src={GalleryDetailsImg3}
+                        src={''}
                         alt=""
                       />
                     </div>
@@ -155,7 +153,7 @@ export default function Home() {
                   <div className="col-xl-4 col-lg-4">
                     <div className="gallery-details__img-box-img">
                       <img
-                        src={GalleryDetailsImg4}
+                        src={''}
                         alt=""
                       />
                     </div>

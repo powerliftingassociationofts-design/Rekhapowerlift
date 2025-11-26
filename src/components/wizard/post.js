@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Use react-router-dom for routing
-import sidebarTitleShape1 from '../../assets/images/shapes/sidebar-title-shape.png'
 import SidebarTitleImg1 from '../../assets/images/blog/lp-1-1.jpg'
 import SidebarTitleImg2 from '../../assets/images/blog/lp-1-2.jpg'
 import SidebarTitleImg3 from '../../assets/images/blog/lp-1-3.jpg'
@@ -10,12 +9,6 @@ export default function Post() {
     <>
       <div className="sidebar__single sidebar__post">
         <div className="sidebar__title-box">
-          <div className="sidebar__title-shape">
-            <img
-              src={sidebarTitleShape1}
-              alt=""
-            />
-          </div>
           <h3 className="sidebar__title">Search</h3>
         </div>
         <ul className="sidebar__post-list list-unstyled">

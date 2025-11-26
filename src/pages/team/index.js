@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
+
 import BackToTop from '../../components/elements/BackToTop';
 import Header from '../../components/Layout/Header';
-import navImg1 from '../../assets/images/resources/logo-1.png';
+
 import Footer from '../../components/Layout/Footer';
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
-import bannerbg from '../../assets/images/backgrounds/page-header-bg.jpg';
+
 import CtaTwo from '../../components/Common/CtaSection/CtaTwo';
 import TeamMain from './TeamMain';
+
+const navImg1 = `${process.env.PUBLIC_URL}/images/resources/logo-1.png`;
+const bannerbg = `${process.env.PUBLIC_URL}/images/backgrounds/page-header-bg.jpg`;
 
 
 // Breadcrumbs Background Image

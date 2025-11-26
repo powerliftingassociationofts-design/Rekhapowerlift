@@ -2,24 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BackToTop from '../../components/elements/BackToTop';
 import Header from '../../components/Layout/Header';
-import navImg1 from '../../assets/images/resources/logo-1.png';
 import Footer from '../../components/Layout/Footer';
 import SiteBreadcrumb from '../../components/Common/Breadcumb';
 import CtaTwo from '../../components/Common/CtaSection/CtaTwo';
 import EventMain from './EventDetails';
 
-
-import EventBanner1 from '../../assets/images/resources/schedule-one-1-1.jpg';
-import EventBanner2 from '../../assets/images/resources/schedule-one-1-2.jpg';
-import EventBanner3 from '../../assets/images/resources/event-details-img-box-img-11.jpg';
-import EventBanner4 from '../../assets/images/resources/schedule-one-1-4.jpg';
-import EventBanner5 from '../../assets/images/resources/schedule-one-1-5.jpg';
-import EventBanner6 from '../../assets/images/resources/schedule-one-1-6.jpg';
-import EventBanner7 from '../../assets/images/resources/schedule-one-1-7.jpg';
-import EventBanner8 from '../../assets/images/resources/schedule-one-1-8.jpg';
-import EventBanner9 from '../../assets/images/resources/schedule-one-1-10.jpg';
-
-import DefaultBanner from '../../assets/images/backgrounds/page-header-bg.jpg';
+const navImg1 = `${process.env.PUBLIC_URL}/images/resources/logo-1.png`;
+const EventBanner1 = `${process.env.PUBLIC_URL}/images/resources/schedule-one-1-1.jpg`;
+const EventBanner2 = `${process.env.PUBLIC_URL}/images/resources/schedule-one-1-2.jpg`;
+const EventBanner3 = `${process.env.PUBLIC_URL}/images/resources/event-details-img-box-img-11.jpg`;
+const EventBanner4 = `${process.env.PUBLIC_URL}/images/resources/schedule-one-1-4.jpg`;
+const EventBanner5 = `${process.env.PUBLIC_URL}/images/resources/schedule-one-1-5.jpg`;
+const EventBanner6 = `${process.env.PUBLIC_URL}/images/resources/schedule-one-1-6.jpg`;
+const EventBanner7 = `${process.env.PUBLIC_URL}/images/resources/schedule-one-1-7.jpg`;
+const EventBanner8 = `${process.env.PUBLIC_URL}/images/resources/schedule-one-1-8.jpg`;
+const EventBanner9 = `${process.env.PUBLIC_URL}/images/resources/schedule-one-1-10.jpg`;
+const DefaultBanner = `${process.env.PUBLIC_URL}/images/backgrounds/page-header-bg.jpg`;
 
 const Event = () => {
   const { eventId } = useParams();
